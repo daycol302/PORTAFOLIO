@@ -7,6 +7,7 @@ import { siteConfig } from '@/config/site';
 // Ignore missing type declarations for side-effect CSS import in this environment
 // @ts-ignore
 import './globals.css';
+import Navbar from '@/components/layout/navbar';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -36,7 +37,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-background font-sans antialiased`}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider><Navbar />{children}</ThemeProvider>
       </body>
     </html>
   );

@@ -11,7 +11,7 @@ type NavLinksProps = {
 
 export function NavLinks({ className, onLinkClick }: NavLinksProps) {
   return (
-    <ul className={className}>
+    <ul className={`flex items-center gap-8 ${className ?? ""}`}>
       {siteConfig.nav.map((item) => (
         <li key={item.href}>
           <NavLink
