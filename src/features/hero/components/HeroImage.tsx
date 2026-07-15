@@ -1,49 +1,96 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import {
+  Activity,
+  CheckCircle2,
+  CloudCog,
+  GitBranch,
+  ShieldCheck,
+} from 'lucide-react';
 
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-
-import { profile } from '@/features/hero/data/profile';
+const services = [
+  { label: 'CI/CD pipeline', value: 'Healthy', icon: GitBranch },
+  { label: 'Infrastructure', value: 'Protected', icon: ShieldCheck },
+  { label: 'Observability', value: 'Online', icon: Activity },
+] as const;
 
 export default function HeroImage() {
   return (
-    <motion.div
+    <motion.aside
+      aria-label="Resumen de operaciones cloud"
       initial={{ opacity: 0, x: 32 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.75, ease: 'easeOut' }}
-      className="mx-auto w-full max-w-xs"
+      className="relative mx-auto w-full max-w-md"
     >
-      <Card className="overflow-hidden">
-        <CardHeader className="items-center pb-2">
-          <div className="border-primary/20 relative h-40 w-40 overflow-hidden rounded-full border-2">
-            <Image
-              src={profile.image}
-              alt={profile.name}
-              fill
-              priority
-              className="object-cover"
-            />
+      <div className="from-primary/20 via-primary/5 absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br to-transparent blur-2xl" />
+
+      <div className="border-primary/15 bg-card/95 relative overflow-hidden rounded-3xl border p-5 shadow-xl backdrop-blur sm:p-6">
+        <div className="bg-primary/5 absolute inset-0 bg-[linear-gradient(to_right,transparent_0,transparent_31px,rgba(14,165,233,0.08)_32px),linear-gradient(to_bottom,transparent_0,transparent_31px,rgba(14,165,233,0.08)_32px)] bg-[size:32px_32px]" />
+
+        <div className="relative">
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="bg-primary text-primary-foreground grid size-11 place-items-center rounded-2xl shadow-lg shadow-sky-500/25">
+                <CloudCog className="size-6" />
+              </div>
+              <div>
+                <p className="text-foreground font-semibold">
+                  Cloud Operations
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  Laboratorio de infraestructura
+                </p>
+              </div>
+            </div>
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+              <span className="size-2 animate-pulse rounded-full bg-emerald-500" />
+              En línea
+            </span>
           </div>
-        </CardHeader>
 
-        <CardContent className="space-y-4 text-center">
-          <div>
-            <h3 className="text-xl font-semibold">{profile.name}</h3>
+          <div className="border-primary/15 bg-background/70 relative mt-6 overflow-hidden rounded-2xl border p-5">
+            <div className="from-primary/25 absolute top-12 left-1/2 h-24 w-px bg-gradient-to-b to-transparent" />
+            <div className="from-primary/25 absolute top-1/2 left-[22%] h-px w-[56%] bg-gradient-to-r to-transparent" />
 
-            <p className="text-muted-foreground">{profile.role}</p>
+            <div className="relative flex justify-center">
+              <div className="border-primary/25 bg-primary/10 text-primary rounded-xl border px-3 py-2 text-xs font-semibold">
+                GitHub Actions
+              </div>
+            </div>
+            <div className="relative mt-10 flex justify-between gap-3 text-center">
+              {['Terraform', 'AWS VPC', 'CloudWatch'].map((item) => (
+                <div
+                  key={item}
+                  className="border-border bg-card min-w-0 flex-1 rounded-xl border px-2 py-3 text-xs font-medium shadow-sm"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+            <p className="text-muted-foreground mt-4 text-center text-xs">
+              Pipeline reproducible · Seguridad por diseño · Métricas visibles
+            </p>
           </div>
 
-          <p className="text-muted-foreground text-sm">📍 {profile.location}</p>
-
-          <div className="inline-flex items-center gap-2 rounded-full bg-green-500/10 px-3 py-1.5 text-sm font-medium text-green-500">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-green-500"></span>
-
-            {profile.status.es}
+          <div className="mt-5 grid gap-3 sm:grid-cols-3">
+            {services.map(({ label, value, icon: Icon }) => (
+              <div
+                key={label}
+                className="border-border bg-background/60 rounded-xl border p-3"
+              >
+                <Icon className="text-primary size-4" />
+                <p className="text-muted-foreground mt-3 text-xs">{label}</p>
+                <p className="mt-1 flex items-center gap-1.5 text-sm font-semibold">
+                  <CheckCircle2 className="size-3.5 text-emerald-500" />
+                  {value}
+                </p>
+              </div>
+            ))}
           </div>
-        </CardContent>
-      </Card>
-    </motion.div>
+        </div>
+      </div>
+    </motion.aside>
   );
 }

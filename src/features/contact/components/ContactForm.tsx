@@ -1,16 +1,41 @@
 'use client';
 
-import type { FormEvent } from 'react';
+import { type FormEvent, useState } from 'react';
+import { CheckCircle2, LoaderCircle, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
+
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
 const inputClasses =
   'w-full rounded-2xl border border-border bg-background px-4 py-4 text-sm text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20';
 
+type FormStatus = 'idle' | 'sending' | 'success' | 'error';
+
 export function ContactForm() {
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const [status, setStatus] = useState<FormStatus>('idle');
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setStatus('sending');
+
+    const formData = new FormData(event.currentTarget);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) throw new Error('No fue posible enviar el mensaje');
+
+      event.currentTarget.reset();
+      setStatus('success');
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -23,18 +48,18 @@ export function ContactForm() {
       <Card className="overflow-hidden">
         <div>
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase">
-            Formulario
+            Contacto directo
           </p>
           <h3 className="text-foreground mt-3 text-2xl font-semibold">
-            Envíame un mensaje
+            Cuéntame qué necesitas construir
           </h3>
           <p className="text-muted-foreground mt-4 text-sm leading-7">
-            Completa los campos y el formulario estará listo para integrarse con
-            tu backend.
+            Este formulario usa un endpoint de demostración. Conecta Resend u
+            otro proveedor de correo para recibir los mensajes en producción.
           </p>
         </div>
 
-        <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
+        <form className="mt-8 space-y-5" onSubmit={handleSubmit} noValidate>
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="text-muted-foreground space-y-2 text-sm">
               <span className="text-foreground block font-medium">Nombre</span>
@@ -43,6 +68,8 @@ export function ContactForm() {
                 name="name"
                 placeholder="Tu nombre"
                 className={inputClasses}
+                required
+                minLength={2}
               />
             </label>
 
@@ -55,6 +82,7 @@ export function ContactForm() {
                 name="email"
                 placeholder="tu@correo.com"
                 className={inputClasses}
+                required
               />
             </label>
           </div>
@@ -64,8 +92,10 @@ export function ContactForm() {
             <input
               type="text"
               name="subject"
-              placeholder="Título del mensaje"
+              placeholder="Necesito ayuda con…"
               className={inputClasses}
+              required
+              minLength={4}
             />
           </label>
 
@@ -76,16 +106,36 @@ export function ContactForm() {
               rows={5}
               placeholder="Cuéntame sobre tu proyecto"
               className={inputClasses}
+              required
+              minLength={20}
             />
           </label>
 
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-muted-foreground text-sm">
-              El formulario está preparado para integración futura.
+            <p className="text-muted-foreground text-sm" aria-live="polite">
+              {status === 'success' ? (
+                <span className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">
+                  <CheckCircle2 className="size-4" /> Mensaje recibido.
+                  ¡Gracias!
+                </span>
+              ) : status === 'error' ? (
+                'No se pudo enviar. Inténtalo de nuevo.'
+              ) : (
+                'Responderé lo antes posible.'
+              )}
             </p>
 
-            <Button type="submit" className="w-full sm:w-auto">
-              Enviar mensaje
+            <Button
+              type="submit"
+              className="w-full sm:w-auto"
+              disabled={status === 'sending'}
+            >
+              {status === 'sending' ? (
+                <LoaderCircle className="animate-spin" />
+              ) : (
+                <Send />
+              )}
+              {status === 'sending' ? 'Enviando' : 'Enviar mensaje'}
             </Button>
           </div>
         </form>

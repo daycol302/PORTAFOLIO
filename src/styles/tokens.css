@@ -62,38 +62,38 @@
   --shadow-ring: 0 0 0 1px oklch(0 0 0 / 0.05);
 
   /* ── Colors — Light (Vercel/Linear off-white) ───────── */
-  --background: oklch(0.99 0 0);
-  --foreground: oklch(0.13 0.005 285);
+  --background: oklch(0.985 0.008 240);
+  --foreground: oklch(0.18 0.025 255);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.13 0.005 285);
+  --card-foreground: oklch(0.18 0.025 255);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.13 0.005 285);
-  --primary: oklch(0.13 0.005 285);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.96 0.002 285);
-  --secondary-foreground: oklch(0.25 0.005 285);
-  --muted: oklch(0.96 0.002 285);
-  --muted-foreground: oklch(0.45 0.01 285);
-  --accent: oklch(0.96 0.002 285);
-  --accent-foreground: oklch(0.13 0.005 285);
+  --primary: oklch(0.62 0.17 240);
+  --primary-foreground: oklch(0.99 0.005 240);
+  --secondary: oklch(0.95 0.018 240);
+  --secondary-foreground: oklch(0.28 0.04 250);
+  --muted: oklch(0.95 0.012 240);
+  --muted-foreground: oklch(0.46 0.025 250);
+  --accent: oklch(0.93 0.035 250);
+  --accent-foreground: oklch(0.24 0.06 250);
   --destructive: oklch(0.55 0.2 25);
-  --border: oklch(0.91 0.004 285);
-  --input: oklch(0.91 0.004 285);
-  --ring: oklch(0.55 0.01 285);
+  --border: oklch(0.89 0.02 245);
+  --input: oklch(0.89 0.02 245);
+  --ring: oklch(0.62 0.17 240);
   --surface-elevated: oklch(1 0 0);
   --surface-overlay: oklch(0.98 0 0);
 }
 
 .dark {
   /* ── Colors — Dark (Vercel/Linear true dark) ────────── */
-  --background: oklch(0.1 0.005 285);
+  --background: oklch(0.14 0.025 255);
   --foreground: oklch(0.98 0 0);
-  --card: oklch(0.14 0.005 285);
+  --card: oklch(0.18 0.03 255);
   --card-foreground: oklch(0.98 0 0);
   --popover: oklch(0.14 0.005 285);
   --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.98 0 0);
-  --primary-foreground: oklch(0.1 0.005 285);
+  --primary: oklch(0.72 0.14 235);
+  --primary-foreground: oklch(0.14 0.025 255);
   --secondary: oklch(0.18 0.005 285);
   --secondary-foreground: oklch(0.85 0 0);
   --muted: oklch(0.18 0.005 285);
@@ -103,7 +103,7 @@
   --destructive: oklch(0.65 0.2 25);
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.5 0.01 285);
+  --ring: oklch(0.72 0.14 235);
   --surface-elevated: oklch(0.16 0.005 285);
   --surface-overlay: oklch(0.12 0.005 285);
 

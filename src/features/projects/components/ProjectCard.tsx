@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { CheckCircle2, Network } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -50,6 +51,32 @@ export function ProjectCard({ project }: Props) {
           <p className="text-muted-foreground leading-7">
             {project.description}
           </p>
+
+          <ul className="space-y-2">
+            {project.highlights.map((highlight) => (
+              <li key={highlight} className="flex gap-2 text-sm leading-6">
+                <CheckCircle2 className="text-primary mt-1 size-4 shrink-0" />
+                <span className="text-muted-foreground">{highlight}</span>
+              </li>
+            ))}
+          </ul>
+
+          {project.architecture ? (
+            <div className="border-primary/15 bg-primary/5 rounded-xl border p-3 text-sm">
+              <p className="text-primary flex items-center gap-2 font-semibold">
+                <Network className="size-4" /> Arquitectura
+              </p>
+              <p className="text-muted-foreground mt-2 leading-6">
+                {project.architecture}
+              </p>
+            </div>
+          ) : null}
+
+          {project.metric ? (
+            <p className="text-primary text-sm font-semibold">
+              {project.metric}
+            </p>
+          ) : null}
 
           <div className="flex flex-wrap gap-2">
             {project.technologies.map((tech) => (

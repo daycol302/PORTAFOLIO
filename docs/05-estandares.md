@@ -40,3 +40,4 @@
 - ESLint sin errores.
 - TypeScript sin warnings.
 - Tests obligatorios para la lógica importante.
+- Ejecutar `npm run lint`, `npm run typecheck` y `npm run build` antes de publicar.

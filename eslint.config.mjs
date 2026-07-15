@@ -19,16 +19,18 @@ const eslintConfig = [
       '**/node_modules/**',
       '**/out/**',
       '**/dist/**',
-      '**/coverage/**'
+      '**/coverage/**',
     ],
     rules: {
-      'no-console': ['warn',{
-          allow: ['warn', 'error']          
-        }
+      'no-console': [
+        'warn',
+        {
+          allow: ['warn', 'error'],
+        },
       ],
       //Si queremos evitar any
-      "@typescript-eslint/no-explicit-any": "warn"
-    }
+      '@typescript-eslint/no-explicit-any': 'warn',
+    },
   },
 ];
 

@@ -1,6 +1,7 @@
 export const siteConfig = {
-  name: 'Portafolio',
-  description: 'Cloud Engineer | Infrastructure | AWS | Full Stack Developer',
+  name: 'Daynover García',
+  description:
+    'Cloud & Infrastructure Engineer | AWS | Automatización | DevOps',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
   locale: 'es',
   image: '/og-image.png',
@@ -28,9 +29,9 @@ export const siteConfig = {
     { label: 'Contacto', href: '#contact' },
   ],
   links: {
-    github: 'https://github.com/username',
-    linkedin: 'https://linkedin.com/in/username',
-    email: 'hello@example.com',
+    github: 'https://github.com/daynovergarcia',
+    linkedin: 'https://www.linkedin.com/in/daynovergarcia',
+    email: 'daynover.garcia@example.com',
     cv: '/cv.pdf',
   },
 } as const;

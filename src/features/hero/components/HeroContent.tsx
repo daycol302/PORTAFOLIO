@@ -1,9 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 import HeroActions from './HeroActions';
 import HeroTechStack from './HeroTechStack';
+import { profile } from '@/features/hero/data/profile';
 
 export default function HeroContent() {
   return (
@@ -13,9 +15,24 @@ export default function HeroContent() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <span className="text-primary text-sm font-medium tracking-widest uppercase">
-        👋 Hola, soy
-      </span>
+      <div className="flex items-center gap-3">
+        <div className="border-primary/30 relative size-11 overflow-hidden rounded-full border-2 shadow-sm">
+          <Image
+            src={profile.image}
+            alt={`Foto de ${profile.name}`}
+            fill
+            priority
+            sizes="44px"
+            className="object-cover"
+          />
+        </div>
+        <div>
+          <p className="text-primary text-sm font-semibold tracking-widest uppercase">
+            Hola, soy
+          </p>
+          <p className="text-muted-foreground text-xs">{profile.location}</p>
+        </div>
+      </div>
 
       <div>
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">

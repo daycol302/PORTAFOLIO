@@ -1,22 +1,23 @@
 import type { ContactMethod } from '../types';
+import { siteConfig } from '@/config/site';
 
 export const socials: ContactMethod[] = [
   {
     name: 'GitHub',
-    url: 'https://github.com/username',
+    url: siteConfig.links.github,
     icon: 'github',
-    label: 'github.com/username',
+    label: 'github.com/daynovergarcia',
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/username',
+    url: siteConfig.links.linkedin,
     icon: 'linkedin',
-    label: 'linkedin.com/in/username',
+    label: 'linkedin.com/in/daynovergarcia',
   },
   {
     name: 'Correo',
-    url: 'mailto:hello@example.com',
+    url: `mailto:${siteConfig.links.email}`,
     icon: 'mail',
-    label: 'hello@example.com',
+    label: siteConfig.links.email,
   },
 ];

@@ -15,25 +15,25 @@ Actualmente estoy enfocando mi carrera hacia Cloud Computing, AWS e Infraestruct
     'Networking',
     'AWS Cloud',
     'Virtualización',
-    'Automatización'
+    'Automatización',
   ],
 
   stats: [
     {
       value: '3+',
-      label: 'Años'
+      label: 'Años',
     },
     {
       value: '20+',
-      label: 'Tecnologías'
+      label: 'Tecnologías',
     },
     {
       value: '2',
-      label: 'Certificaciones AWS'
+      label: 'Certificaciones AWS',
     },
     {
       value: '100%',
-      label: 'Compromiso'
-    }
-  ]
+      label: 'Compromiso',
+    },
+  ],
 };

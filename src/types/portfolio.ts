@@ -1,4 +1,4 @@
-type ProjectStatusValue = "Completed" | "In Progress" | "Learning";
+type ProjectStatusValue = 'Completed' | 'In Progress' | 'Learning';
 export interface Experience {
   id: string;
 
@@ -6,17 +6,11 @@ export interface Experience {
 
   role: string;
 
-  employmentType:
-    | "Tiempo completo"
-    | "Contrato"
-    | "Prácticas";
+  employmentType: 'Tiempo completo' | 'Contrato' | 'Prácticas';
 
   location: string;
 
-  mode:
-    | "Presencial"
-    | "Híbrido"
-    | "Remoto";
+  mode: 'Presencial' | 'Híbrido' | 'Remoto';
 
   start: string;
 
@@ -36,6 +30,9 @@ export interface Project {
   subtitle: string;
   image: string;
   technologies: string[];
+  highlights: string[];
+  metric?: string;
+  architecture?: string;
   github?: string;
   demo?: string;
   featured: boolean;
