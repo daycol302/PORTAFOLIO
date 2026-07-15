@@ -17,15 +17,19 @@ export function createMetadata({
 }: CreateMetadataOptions = {}): Metadata {
   const pageTitle = title ?? siteConfig.name;
   const canonicalUrl = new URL(path, siteConfig.url).toString();
+  const imageUrl = new URL(siteConfig.image, siteConfig.url).toString();
 
   return {
-    title: title ? title : { default: siteConfig.name, template: `%s | ${siteConfig.name}` },
+    title: title
+      ? title
+      : { default: siteConfig.name, template: `%s | ${siteConfig.name}` },
     description: description || undefined,
     metadataBase: new URL(siteConfig.url),
     alternates: {
       canonical: canonicalUrl,
     },
-    keywords: siteConfig.keywords.length > 0 ? [...siteConfig.keywords] : undefined,
+    keywords:
+      siteConfig.keywords.length > 0 ? [...siteConfig.keywords] : undefined,
     authors: siteConfig.author.name
       ? [{ name: siteConfig.author.name }]
       : undefined,
@@ -37,12 +41,20 @@ export function createMetadata({
       title: pageTitle,
       description: description || undefined,
       siteName: siteConfig.name,
+      images: [
+        {
+          url: imageUrl,
+          alt: `${siteConfig.name} | ${description}`,
+          type: 'image/png',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: pageTitle,
       description: description || undefined,
       creator: siteConfig.author.twitter || undefined,
+      images: [imageUrl],
     },
     robots: noIndex
       ? { index: false, follow: false }

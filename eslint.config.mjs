@@ -14,7 +14,21 @@ const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
   prettier,
   {
-    ignores: ['node_modules/', '.next/', 'out/'],
+    ignores: [
+      '**/.next/**',
+      '**/node_modules/**',
+      '**/out/**',
+      '**/dist/**',
+      '**/coverage/**'
+    ],
+    rules: {
+      'no-console': ['warn',{
+          allow: ['warn', 'error']          
+        }
+      ],
+      //Si queremos evitar any
+      "@typescript-eslint/no-explicit-any": "warn"
+    }
   },
 ];
 

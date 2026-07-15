@@ -7,9 +7,9 @@ const sectionVariants = cva('w-full', {
   variants: {
     spacing: {
       none: 'py-0',
-      sm: 'py-12 md:py-16',
-      default: 'py-[var(--space-section)] md:py-24',
-      lg: 'py-[var(--space-section-lg)] md:py-32',
+      sm: 'py-8 md:py-12',
+      default: 'py-[var(--space-section)] md:py-16',
+      lg: 'py-[var(--space-section-lg)] md:py-24',
     },
     variant: {
       default: 'bg-background',

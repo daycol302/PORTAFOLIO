@@ -36,20 +36,22 @@ export function MobileNav() {
         {open ? <X className="size-4" /> : <Menu className="size-4" />}
       </Button>
 
-      <div
+      <nav
         id="mobile-nav"
+        aria-label="Mobile navigation"
+        aria-hidden={!open}
         className={cn(
-          'absolute inset-x-0 top-16 border-b border-border bg-background/95 backdrop-blur-md transition-all duration-200',
+          'border-border bg-background/95 absolute inset-x-0 top-16 border-b backdrop-blur-md transition-all duration-200',
           open
             ? 'visible translate-y-0 opacity-100'
-            : 'invisible -translate-y-2 opacity-0 pointer-events-none'
+            : 'pointer-events-none invisible -translate-y-2 opacity-0',
         )}
       >
         <NavLinks
           className="flex flex-col gap-4 px-[var(--space-container)] py-6"
           onLinkClick={close}
         />
-      </div>
+      </nav>
     </div>
   );
 }

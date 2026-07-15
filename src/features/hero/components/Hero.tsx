@@ -1,14 +1,14 @@
-import { Container } from "@/components/layout/container";
-import { Section } from "@/components/layout/section";
+import { Container } from '@/components/layout/container';
+import { Section } from '@/components/layout/section';
 
-import HeroContent from "./HeroContent";
-import HeroImage from "./HeroImage";
+import HeroContent from './HeroContent';
+import HeroImage from './HeroImage';
 
 export default function Hero() {
   return (
-    <Section>
+    <Section id="hero" spacing="none" className="scroll-mt-16 py-5 md:py-8">
       <Container>
-        <div className="grid min-h-[calc(100vh-80px)] items-center gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
           <HeroContent />
           <HeroImage />
         </div>

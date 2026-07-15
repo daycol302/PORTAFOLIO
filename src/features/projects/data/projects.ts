@@ -1,59 +1,49 @@
-import { Project } from "@/types/portfolio";
+import type { Project } from '@/types/portfolio';
 
 export const projects: Project[] = [
   {
-    id: "portfolio",
+    id: 'portfolio',
 
-    title: "Professional Portfolio",
+    title: 'Portafolio profesional',
 
-    subtitle: "Cloud & Infrastructure",
+    subtitle: 'Sitio personal de infraestructura y desarrollo',
 
     description:
-      "Portafolio desarrollado con Next.js, TypeScript y Tailwind CSS siguiendo una arquitectura escalable basada en Features.",
+      'Portafolio desarrollado con Next.js, TypeScript y Tailwind CSS siguiendo una arquitectura escalable basada en características.',
 
-    image: "/images/projects/portfolio.png",
+    image: '/images/projects/portfolio.png',
 
-    github: "#",
+    github: 'https://github.com/username/portfolio',
 
-    demo: "#",
+    demo: 'https://portfolio.example.com',
 
     featured: true,
 
-    status: "Completed",
+    status: 'Completed',
 
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion"
-    ]
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
   },
 
   {
-    id: "aws-dashboard",
+    id: 'aws-dashboard',
 
-    title: "AWS Dashboard",
+    title: 'Panel de AWS',
 
-    subtitle: "Infrastructure Monitoring",
+    subtitle: 'Monitoreo de infraestructura',
 
     description:
-      "Dashboard para visualizar recursos de AWS y monitorear infraestructura.",
+      'Dashboard para visualizar recursos en AWS y mantener el control del estado de la infraestructura.',
 
-    image: "/images/projects/aws-dashboard.png",
+    image: '/images/projects/aws-dashboard.png',
 
-    github: "#",
+    github: 'https://github.com/username/aws-dashboard',
 
-    demo: "#",
+    demo: 'https://aws-dashboard.example.com',
 
     featured: true,
 
-    status: "In Progress",
+    status: 'In Progress',
 
-    technologies: [
-      "AWS",
-      "React",
-      "Node.js",
-      "CloudWatch"
-    ]
-  }
+    technologies: ['AWS', 'React', 'Node.js', 'CloudWatch'],
+  },
 ];

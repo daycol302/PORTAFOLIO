@@ -1,55 +1,28 @@
-import { experiences } from "../data/experience";
-import { ExperienceItem } from "./ExperienceItem";
+'use client';
+
+import { motion } from 'framer-motion';
+import { experiences } from '../data/experience';
+import { ExperienceItem } from './ExperienceItem';
 
 export function ExperienceTimeline() {
   return (
-    <div className="relative mt-20">
-
-      <div
-        className="
-        absolute
-        left-5
-        top-0
-        h-full
-        w-px
-        bg-border
-        "
+    <motion.div className="relative mt-20">
+      <motion.div
+        className="bg-border absolute top-0 left-4 h-full w-px"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
       />
 
       <div className="space-y-12">
-
         {experiences.map((experience) => (
+          <div key={experience.id} className="relative pl-14 sm:pl-16">
+            <div className="border-background bg-primary absolute top-10 left-0 h-4 w-4 rounded-full border-4" />
 
-          <div
-            key={experience.id}
-            className="
-            relative
-            pl-16
-            "
-          >
-            <div
-              className="
-              absolute
-              left-3
-              top-10
-              size-4
-              rounded-full
-              border-4
-              border-background
-              bg-primary
-              "
-            />
-
-            <ExperienceItem
-              experience={experience}
-            />
-
+            <ExperienceItem experience={experience} />
           </div>
-
         ))}
-
       </div>
-
-    </div>
+    </motion.div>
   );
 }

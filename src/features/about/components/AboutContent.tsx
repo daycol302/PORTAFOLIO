@@ -1,5 +1,5 @@
-import { SectionTitle } from "@/components/ui/section-title";
-import { aboutData } from "../data/about";
+import { SectionTitle } from '@/components/ui/section-title';
+import { aboutData } from '../data/about';
 
 export function AboutContent() {
   return (
@@ -10,12 +10,12 @@ export function AboutContent() {
         description=""
       />
 
-      <div className="space-y-5 leading-8 text-muted-foreground">
+      <div className="text-muted-foreground space-y-5 leading-8">
         {aboutData.description
           .trim()
-          .split("\n")
-          .map((paragraph) => (
-            <p key={paragraph}>{paragraph.trim()}</p>
+          .split('\n')
+          .map((paragraph, index) => (
+            <p key={index}>{paragraph.trim()}</p>
           ))}
       </div>
     </div>

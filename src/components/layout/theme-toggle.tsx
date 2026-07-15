@@ -15,12 +15,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <Button
-        variant="outline"
-        size="icon"
-        className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border transition-colors hover:bg-muted"
-        aria-label="Cambiar tema"
-      >
+      <Button variant="outline" size="icon" aria-label="Cambiar tema">
         {/* Fallback neutro */}
         <div className="h-5 w-5" />
       </Button>
@@ -34,7 +29,6 @@ export function ThemeToggle() {
       variant="outline"
       size="icon"
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border transition-colors hover:bg-muted"
       aria-label="Cambiar tema"
     >
       {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}

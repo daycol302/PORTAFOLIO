@@ -1,43 +1,43 @@
-import { Experience } from "@/types/portfolio";
+import type { Experience } from '@/types/portfolio';
 
 export const experiences: Experience[] = [
   {
-    id: "current",
+    id: 'current',
 
-    company: "Nombre de la empresa",
+    company: 'Nombre de la empresa',
 
-    role: "Analista de Soporte e Infraestructura",
+    role: 'Analista de Soporte e Infraestructura',
 
-    employmentType: "Tiempo completo",
+    employmentType: 'Tiempo completo',
 
-    mode: "Presencial",
+    mode: 'Presencial',
 
-    location: "Bogotá, Colombia",
+    location: 'Bogotá, Colombia',
 
-    start: "2022",
+    start: '2022',
 
-    end: "Actual",
+    end: 'Actual',
 
     current: true,
 
     description: [
-      "Soporte técnico N1 y N2 para usuarios corporativos.",
-      "Administración de Active Directory.",
-      "Gestión de Microsoft 365.",
-      "Administración de Windows Server.",
-      "Administración de impresoras corporativas.",
-      "Soporte de redes LAN y WiFi.",
-      "Cumplimiento de ANS e ITIL."
+      'Soporte técnico N1 y N2 para usuarios corporativos.',
+      'Administración de Active Directory.',
+      'Gestión de Microsoft 365.',
+      'Administración de Windows Server.',
+      'Administración de impresoras corporativas.',
+      'Soporte de redes LAN y WiFi.',
+      'Cumplimiento de ANS e ITIL.',
     ],
 
     technologies: [
-      "Windows Server",
-      "Active Directory",
-      "Microsoft 365",
-      "Azure AD",
-      "PowerShell",
-      "Networking",
-      "ITIL"
-    ]
-  }
+      'Windows Server',
+      'Active Directory',
+      'Microsoft 365',
+      'Azure AD',
+      'PowerShell',
+      'Networking',
+      'ITIL',
+    ],
+  },
 ];

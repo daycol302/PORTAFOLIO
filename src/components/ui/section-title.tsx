@@ -15,22 +15,22 @@ export function SectionTitle({
     <div
       className={
         align === 'center'
-          ? 'mx-auto max-w-2xl text-center'
-          : 'max-w-2xl'
+          ? 'mx-auto mb-6 max-w-2xl text-center'
+          : 'mb-6 max-w-2xl'
       }
     >
       {eyebrow && (
-        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+        <span className="text-primary text-sm font-semibold tracking-[0.18em] uppercase">
           {eyebrow}
         </span>
       )}
 
-      <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">
+      <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">
         {title}
       </h2>
 
       {description && (
-        <p className="mt-5 leading-8 text-muted-foreground">
+        <p className="text-muted-foreground mt-3 max-w-2xl leading-7">
           {description}
         </p>
       )}

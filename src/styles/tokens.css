@@ -27,9 +27,9 @@
   --space-16: 4rem;
   --space-20: 5rem;
   --space-24: 6rem;
-  --space-section: 6rem;
-  --space-section-lg: 8rem;
-  --space-container: 1.5rem;
+  --space-section: 4rem;
+  --space-section-lg: 6rem;
+  --space-container: 1rem;
 
   /* ── Typography scale ─────────────────────────────────── */
   --text-xs: 0.75rem;
@@ -57,10 +57,8 @@
   --shadow-xs: 0 1px 2px oklch(0 0 0 / 0.04);
   --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.06), 0 1px 2px oklch(0 0 0 / 0.04);
   --shadow-md: 0 4px 6px oklch(0 0 0 / 0.05), 0 2px 4px oklch(0 0 0 / 0.04);
-  --shadow-lg:
-    0 10px 15px oklch(0 0 0 / 0.06), 0 4px 6px oklch(0 0 0 / 0.04);
-  --shadow-xl:
-    0 20px 25px oklch(0 0 0 / 0.06), 0 8px 10px oklch(0 0 0 / 0.04);
+  --shadow-lg: 0 10px 15px oklch(0 0 0 / 0.06), 0 4px 6px oklch(0 0 0 / 0.04);
+  --shadow-xl: 0 20px 25px oklch(0 0 0 / 0.06), 0 8px 10px oklch(0 0 0 / 0.04);
   --shadow-ring: 0 0 0 1px oklch(0 0 0 / 0.05);
 
   /* ── Colors — Light (Vercel/Linear off-white) ───────── */
@@ -113,9 +111,7 @@
   --shadow-xs: 0 1px 2px oklch(0 0 0 / 0.2);
   --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.3), 0 1px 2px oklch(0 0 0 / 0.2);
   --shadow-md: 0 4px 6px oklch(0 0 0 / 0.25), 0 2px 4px oklch(0 0 0 / 0.2);
-  --shadow-lg:
-    0 10px 15px oklch(0 0 0 / 0.3), 0 4px 6px oklch(0 0 0 / 0.2);
-  --shadow-xl:
-    0 20px 25px oklch(0 0 0 / 0.35), 0 8px 10px oklch(0 0 0 / 0.2);
+  --shadow-lg: 0 10px 15px oklch(0 0 0 / 0.3), 0 4px 6px oklch(0 0 0 / 0.2);
+  --shadow-xl: 0 20px 25px oklch(0 0 0 / 0.35), 0 8px 10px oklch(0 0 0 / 0.2);
   --shadow-ring: 0 0 0 1px oklch(1 0 0 / 6%);
 }

@@ -4,12 +4,12 @@ import * as React from 'react';
 import { cn } from '@/lib/utils';
 
 const cardVariants = cva(
-  'rounded-xl border border-border bg-card text-card-foreground transition-colors duration-200',
+  'rounded-2xl border border-border bg-card text-card-foreground shadow-sm transition-all duration-300',
   {
     variants: {
       variant: {
         default: 'shadow-sm',
-        elevated: 'bg-surface-elevated shadow-md',
+        elevated: 'bg-surface-elevated shadow-sm',
         outline: 'border-border bg-transparent shadow-none',
         ghost: 'border-transparent bg-transparent shadow-none',
       },
@@ -24,7 +24,7 @@ const cardVariants = cva(
       variant: 'default',
       padding: 'default',
     },
-  }
+  },
 );
 
 function Card({
@@ -57,8 +57,8 @@ function CardTitle({ className, ...props }: React.ComponentProps<'h3'>) {
     <h3
       data-slot="card-title"
       className={cn(
-        'text-lg font-semibold leading-snug tracking-tight',
-        className
+        'text-lg leading-snug font-semibold tracking-tight',
+        className,
       )}
       {...props}
     />
@@ -69,7 +69,7 @@ function CardDescription({ className, ...props }: React.ComponentProps<'p'>) {
   return (
     <p
       data-slot="card-description"
-      className={cn('text-sm text-muted-foreground', className)}
+      className={cn('text-muted-foreground text-sm', className)}
       {...props}
     />
   );

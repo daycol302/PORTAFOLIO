@@ -1,44 +1,42 @@
-import HeroActions from "./HeroActions";
-import HeroTechStack from "./HeroTechStack";
+'use client';
+
+import { motion } from 'framer-motion';
+
+import HeroActions from './HeroActions';
+import HeroTechStack from './HeroTechStack';
 
 export default function HeroContent() {
   return (
-    <div className="flex flex-col justify-center space-y-8">
-
-      {/* Greeting */}
-
-      <span className="text-sm font-medium tracking-widest uppercase text-primary">
-        👋 Hello, I'm
+    <motion.div
+      className="flex flex-col justify-center space-y-4"
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+    >
+      <span className="text-primary text-sm font-medium tracking-widest uppercase">
+        👋 Hola, soy
       </span>
 
-      {/* Name */}
-
       <div>
-        <h1 className="text-5xl font-black tracking-tight sm:text-6xl lg:text-7xl">
-            Daynover{" "}
-            <span className="text-primary">
-                García Zapata
-            </span>
+        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Daynover <span className="text-primary">García Zapata</span>
         </h1>
       </div>
 
-      {/* Role */}
-
-      <h2 className="text-2xl font-semibold text-muted-foreground">
-        Cloud & Infrastructure Engineer
+      <h2 className="text-lg leading-tight font-medium sm:text-xl lg:text-2xl">
+        Construyo plataformas cloud modernas, seguras y preparadas para crecer.
       </h2>
 
-      {/* Description */}
-
-      <p className="max-w-xl text-lg leading-8 text-muted-foreground">
-        I build reliable infrastructure, modern web applications and scalable
-        cloud solutions focused on performance, security and user experience.
+      <p className="text-muted-foreground max-w-xl text-base leading-8 sm:text-lg">
+        Cloud & Infrastructure Engineer especializado en AWS, Azure y DevOps.
+        Desarrollo soluciones enfocadas en automatización, disponibilidad y
+        escalabilidad, aplicando buenas prácticas para crear infraestructuras
+        eficientes, seguras y fáciles de mantener.
       </p>
 
       <HeroActions />
 
       <HeroTechStack />
-
-    </div>
+    </motion.div>
   );
 }
