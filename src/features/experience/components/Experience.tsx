@@ -9,11 +9,10 @@ export default function Experience() {
     <Section id="experience">
       <Container>
         <SectionTitle
-          eyebrow="Experiencia"
-          title="Mi trayectoria profesional"
-          description="Más de 3 años trabajando en soporte, infraestructura y administración de plataformas Microsoft, preparándome para especializarme en Cloud Computing."
+          eyebrow="Experiencia Profesional"
+          title="Construyendo soluciones tecnológicas con impacto"
+          description="Durante los últimos años he participado en proyectos de soporte empresarial, infraestructura, administración de plataformas Microsoft y servicios Cloud, fortaleciendo continuamente mis habilidades para afrontar nuevos retos tecnológicos."
         />
-
         <ExperienceTimeline />
       </Container>
     </Section>

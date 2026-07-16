@@ -4,69 +4,159 @@ export const projects: Project[] = [
   {
     id: 'portfolio',
 
-    title: 'Portafolio profesional',
+    title: 'Enterprise Portfolio Platform',
 
-    subtitle: 'Portafolio rápido, accesible y orientado a Cloud',
+    subtitle: 'Portafolio profesional desarrollado con Next.js y TypeScript',
 
     description:
-      'Sitio personal construido con una arquitectura feature-first para presentar proyectos, experiencia y habilidades de infraestructura de forma clara y medible.',
+      'Aplicación web diseñada para presentar mi experiencia profesional, proyectos y habilidades en Infraestructura TI, Cloud Computing y Desarrollo. Construida con una arquitectura moderna orientada a rendimiento, escalabilidad y mantenibilidad.',
 
     image: '/images/projects/portfolio.png',
 
-    github: 'https://github.com/daynovergarcia/cloud-portfolio',
+    github: '#',
 
-    demo: 'https://daynovergarcia.dev',
+    demo: '#',
 
     featured: true,
 
     status: 'Completed',
 
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    technologies: [
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'Framer Motion',
+      'Vercel',
+    ],
 
     highlights: [
-      'SEO técnico con sitemap, robots y datos estructurados',
-      'Tema claro/oscuro persistente y navegación accesible',
-      'Componentes reutilizables y tipado estricto',
+      'Arquitectura Feature-First altamente escalable.',
+      'Diseño completamente responsive.',
+      'Optimización SEO y rendimiento.',
+      'Modo claro y oscuro persistente.',
+      'Componentes reutilizables y tipado estricto.',
     ],
-    metric: 'Objetivo: 90+ en Lighthouse',
-    architecture: 'Next.js → componentes por feature → datos tipados → Vercel',
+
+    metric:
+      'Optimizado para obtener una alta puntuación en Performance, SEO y Accessibility.',
+
+    architecture:
+      'Next.js → Feature Architecture → TypeScript → Tailwind CSS → Vercel',
   },
 
   {
-    id: 'aws-dashboard',
+    id: 'aws-learning-lab',
 
-    title: 'Cloud Operations Lab',
+    title: 'AWS Cloud Learning Lab',
 
     subtitle:
-      'Infraestructura como código, observabilidad y despliegue continuo',
+      'Laboratorios prácticos para fortalecer conocimientos en AWS Cloud',
 
     description:
-      'Laboratorio de operaciones cloud que simula el despliegue y monitoreo de una aplicación contenida, priorizando seguridad, trazabilidad y control de costos.',
+      'Colección de laboratorios enfocados en comprender los principales servicios de AWS mediante implementaciones prácticas, siguiendo buenas prácticas de seguridad y administración de infraestructura.',
 
-    image: '/images/projects/aws-dashboard.png',
+    image: '/images/projects/aws-learning-lab.png',
 
-    github: 'https://github.com/daynovergarcia/cloud-operations-lab',
+    github: '#',
 
-    demo: 'https://cloud-lab.daynovergarcia.dev',
+    demo: '#',
 
     featured: true,
 
-    status: 'In Progress',
+    status: 'Learning',
+
+    technologies: ['AWS', 'IAM', 'EC2', 'S3', 'VPC', 'CloudWatch', 'Git'],
+
+    highlights: [
+      'Configuración de usuarios y políticas IAM.',
+      'Implementación de instancias EC2.',
+      'Administración de almacenamiento con Amazon S3.',
+      'Configuración básica de redes VPC.',
+      'Monitoreo mediante CloudWatch.',
+    ],
+
+    metric:
+      'Laboratorios desarrollados durante la preparación para certificaciones AWS.',
+
+    architecture: 'IAM → EC2 → S3 → VPC → CloudWatch',
+  },
+
+  {
+    id: 'enterprise-infrastructure',
+
+    title: 'Enterprise Infrastructure Administration',
+
+    subtitle:
+      'Administración de infraestructura corporativa y servicios Microsoft',
+
+    description:
+      'Experiencia aplicada en administración de plataformas Microsoft, Active Directory, Windows Server y Microsoft 365, participando en la resolución de incidencias, gestión de usuarios y soporte empresarial.',
+
+    image: '/images/projects/infrastructure.png',
+
+    github: '#',
+
+    demo: '#',
+
+    featured: true,
+
+    status: 'Completed',
 
     technologies: [
-      'AWS',
-      'Terraform',
-      'Docker',
-      'GitHub Actions',
-      'CloudWatch',
+      'Microsoft 365',
+      'Azure',
+      'Active Directory',
+      'Windows Server',
+      'PowerShell',
+      'Networking',
     ],
 
     highlights: [
-      'Red VPC segmentada con roles IAM de mínimo privilegio',
-      'Infraestructura reproducible con Terraform',
-      'Alertas y métricas de disponibilidad con CloudWatch',
+      'Administración de Active Directory.',
+      'Gestión de Microsoft 365.',
+      'Administración de Windows Server.',
+      'Soporte técnico N1 y N2.',
+      'Resolución de incidencias empresariales.',
     ],
-    metric: 'Meta: despliegues repetibles en menos de 10 minutos',
-    architecture: 'GitHub Actions → Terraform → AWS VPC / ECS → CloudWatch',
+
+    metric: 'Más de 3 años de experiencia en entornos corporativos.',
+
+    architecture:
+      'Usuarios → Active Directory → Microsoft 365 → Windows Server',
+  },
+
+  {
+    id: 'powerbi-dashboard',
+
+    title: 'IT Operations Dashboard',
+
+    subtitle: 'Dashboard para seguimiento de indicadores operativos',
+
+    description:
+      'Proyecto orientado a la visualización de información operativa mediante Power BI para facilitar el análisis de indicadores y apoyar la toma de decisiones en entornos empresariales.',
+
+    image: '/images/projects/powerbi-dashboard.png',
+
+    github: '#',
+
+    demo: '#',
+
+    featured: false,
+
+    status: 'Completed',
+
+    technologies: ['Power BI', 'Excel', 'SQL', 'Azure'],
+
+    highlights: [
+      'Visualización de indicadores.',
+      'Dashboards interactivos.',
+      'Análisis de información.',
+      'Optimización de reportes.',
+    ],
+
+    metric:
+      'Reducción del tiempo de consulta de información mediante paneles centralizados.',
+
+    architecture: 'SQL → Power BI → Dashboards → Indicadores',
   },
 ];

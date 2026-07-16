@@ -14,26 +14,41 @@ export default function Certifications() {
       <Container>
         <SectionTitle
           eyebrow="Certificaciones"
-          title="Acreditaciones que respaldan mi experiencia"
-          description="Certificados clave en cloud, infraestructura y gestión de servicios que respaldan mi trabajo profesional."
+          title="Certificaciones y aprendizaje continuo"
+          description="La formación continua es parte fundamental de mi desarrollo profesional. Estas certificaciones respaldan mi experiencia actual y mi proceso de especialización en Cloud Computing e Infraestructura."
         />
 
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {certifications.map((certificate) => (
             <Card key={certificate.id} className="overflow-hidden">
-              <div className="flex h-full flex-col gap-4 p-4">
+              <div className="flex h-full flex-col gap-4 p-6">
                 <div>
-                  <h3 className="text-foreground text-xl font-semibold">
+                  <h3 className="text-xl font-bold tracking-tight">
                     {certificate.name}
                   </h3>
                   <p className="text-muted-foreground mt-2 text-sm">
                     {certificate.issuer}
                   </p>
+                  <div className="mt-3">
+                    <Badge
+                      variant={
+                        certificate.status === 'completed'
+                          ? 'success'
+                          : 'warning'
+                      }
+                    >
+                      {certificate.status === 'completed'
+                        ? 'Certificación obtenida'
+                        : 'En preparación'}
+                    </Badge>
+                  </div>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-3 text-sm">
                   <Badge variant="outline">
-                    Emitido: {certificate.issueDate}
+                    {certificate.status === 'completed'
+                      ? `Obtenida: ${certificate.issueDate}`
+                      : 'Próximo objetivo'}
                   </Badge>
 
                   {certificate.credentialUrl ? (

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowUp, Github, Linkedin, Mail, MapPin } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
@@ -9,14 +9,14 @@ import { siteConfig } from '@/config/site';
 
 const socialItems = [
   {
-    label: 'GitHub',
-    href: siteConfig.links.github,
-    Icon: Github,
-  },
-  {
     label: 'LinkedIn',
     href: siteConfig.links.linkedin,
     Icon: Linkedin,
+  },
+  {
+    label: 'GitHub',
+    href: siteConfig.links.github,
+    Icon: Github,
   },
   {
     label: 'Correo',
@@ -28,41 +28,56 @@ const socialItems = [
 export function Footer() {
   return (
     <motion.footer
-      className="border-border bg-background/80 border-t"
+      className="border-border bg-background border-t"
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
     >
-      <Container className="py-8">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-          <div className="space-y-4">
+      <Container className="py-10">
+        <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
+          {/* Información */}
+          <div className="space-y-6">
             <div>
               <p className="text-primary text-xs font-semibold tracking-[0.3em] uppercase">
                 {siteConfig.author.name}
               </p>
-              <p className="text-foreground mt-2 text-xl font-semibold sm:text-2xl">
-                {siteConfig.description}
-              </p>
+
+              <h2 className="mt-3 text-3xl font-bold tracking-tight">
+                {siteConfig.author.role}
+              </h2>
+
+              <div className="text-muted-foreground mt-3 flex items-center gap-2 text-sm">
+                <MapPin className="size-4" />
+                {siteConfig.author.location}
+              </div>
             </div>
-            <p className="text-muted-foreground max-w-2xl text-sm leading-6">
-              Conecta con mi trabajo, experiencia y servicios a través de mis
-              redes sociales.
-            </p>
-            <p className="text-muted-foreground text-sm">
-              © {new Date().getFullYear()} {siteConfig.author.name}. Todos los
-              derechos reservados.
+
+            <p className="text-muted-foreground max-w-2xl leading-7">
+              Gracias por visitar mi portafolio. Estoy abierto a oportunidades
+              profesionales relacionadas con Infraestructura TI, Cloud
+              Computing, Administración de Plataformas Microsoft y Soporte
+              Empresarial. Si crees que puedo aportar valor a tu equipo, será un
+              gusto conversar.
             </p>
           </div>
 
-          <div className="flex flex-col items-start gap-4 sm:items-end">
-            <div className="flex flex-wrap justify-start gap-3 sm:justify-end">
+          {/* Redes */}
+          <div className="space-y-5">
+            <h3 className="text-lg font-bold">Conectemos</h3>
+
+            <div className="flex flex-col gap-3">
               {socialItems.map(({ label, href, Icon }) => (
-                <Button key={label} asChild variant="outline" size="sm">
+                <Button
+                  key={label}
+                  asChild
+                  variant="outline"
+                  className="justify-start"
+                >
                   <a
                     href={href}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-4"
+                    className="flex items-center gap-3"
                   >
                     <Icon className="size-4" />
                     {label}
@@ -70,15 +85,28 @@ export function Footer() {
                 </Button>
               ))}
             </div>
-            <Button asChild variant="default" className="w-full sm:w-auto">
+
+            <Button asChild className="w-full">
               <a
                 href="#hero"
-                className="inline-flex w-full items-center justify-center gap-2 sm:w-auto"
+                className="flex items-center justify-center gap-2"
               >
-                Volver arriba <ArrowUp className="size-4" />
+                Volver al inicio
+                <ArrowUp className="size-4" />
               </a>
             </Button>
           </div>
+        </div>
+
+        <div className="bg-border my-8 h-px w-full" />
+
+        <div className="text-muted-foreground flex flex-col gap-3 text-sm md:flex-row md:items-center md:justify-between">
+          <p>
+            © {new Date().getFullYear()} {siteConfig.author.name}. Todos los
+            derechos reservados.
+          </p>
+
+          <p>Desarrollado con Next.js, TypeScript y Tailwind CSS.</p>
         </div>
       </Container>
     </motion.footer>

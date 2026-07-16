@@ -12,12 +12,12 @@ type Props = {
 export function ProjectLinks({ github, demo }: Props) {
   const links = [
     {
-      label: 'GitHub',
+      label: 'Repositorio',
       href: github,
       icon: Github,
     },
     {
-      label: 'Demo',
+      label: 'Ver proyecto',
       href: demo,
       icon: ExternalLink,
     },

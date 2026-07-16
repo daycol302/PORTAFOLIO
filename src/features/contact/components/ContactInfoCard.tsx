@@ -28,7 +28,7 @@ export function ContactInfoCard({ method }: ContactInfoCardProps) {
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <Card className="overflow-hidden">
+      <Card className="overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
         <div className="flex items-center gap-4">
           <div className="bg-primary/10 text-primary grid h-12 w-12 place-items-center rounded-2xl">
             <Icon className="size-5" />
@@ -44,11 +44,15 @@ export function ContactInfoCard({ method }: ContactInfoCardProps) {
 
         <Button
           asChild
-          variant="outline"
+          variant="default"
           className="mt-6 w-full justify-center"
         >
           <a href={method.url} target="_blank" rel="noreferrer">
-            Abrir enlace
+            {method.name === 'LinkedIn'
+              ? 'Ver perfil'
+              : method.name === 'GitHub'
+                ? 'Ver repositorios'
+                : 'Enviar correo'}
           </a>
         </Button>
       </Card>

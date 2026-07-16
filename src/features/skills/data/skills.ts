@@ -2,54 +2,69 @@ import type { SkillCategory } from '../types';
 
 export const skills: SkillCategory[] = [
   {
-    title: 'Cloud',
+    title: 'Cloud Computing',
     skills: [
-      'AWS',
-      'Azure',
-      'Cloud Architecture',
+      'AWS (Learning)',
+      'Microsoft Azure',
+      'Amazon EC2',
+      'Amazon S3',
       'IAM',
-      'EC2',
-      'S3',
       'VPC',
-      'Serverless',
+      'CloudWatch',
     ],
   },
+
   {
-    title: 'Infrastructure',
+    title: 'Infraestructura TI',
     skills: [
       'Windows Server',
       'Active Directory',
       'DNS',
       'DHCP',
-      'Group Policy',
       'Networking',
       'VPN',
+      'Virtualización',
     ],
   },
+
   {
-    title: 'Frontend',
-    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS'],
-  },
-  {
-    title: 'Backend',
-    skills: ['Node.js', 'Express', 'REST APIs', 'GraphQL', 'TypeScript'],
-  },
-  {
-    title: 'Databases',
-    skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'SQL'],
-  },
-  {
-    title: 'DevOps',
-    skills: ['Docker', 'Kubernetes', 'CI/CD', 'Terraform', 'Git'],
-  },
-  {
-    title: 'Tools',
+    title: 'Microsoft Ecosystem',
     skills: [
+      'Microsoft 365',
+      'Azure AD',
+      'Exchange Online',
+      'OneDrive',
+      'SharePoint',
+      'PowerShell',
+    ],
+  },
+
+  {
+    title: 'Desarrollo',
+    skills: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'C#', 'SQL'],
+  },
+
+  {
+    title: 'Herramientas',
+    skills: [
+      'Git',
       'GitHub',
       'Visual Studio Code',
-      'PowerShell',
       'Azure DevOps',
+      'Power BI',
       'Postman',
+    ],
+  },
+
+  {
+    title: 'Metodologías',
+    skills: [
+      'ITIL v4',
+      'Scrum',
+      'Gestión de Incidentes',
+      'Soporte N1/N2',
+      'Resolución de Problemas',
+      'Documentación Técnica',
     ],
   },
 ];

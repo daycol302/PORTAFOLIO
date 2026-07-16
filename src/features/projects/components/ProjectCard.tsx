@@ -28,11 +28,16 @@ export function ProjectCard({ project }: Props) {
       <Card padding="none" className="flex h-full flex-col overflow-hidden">
         <ProjectImage image={project.image} title={project.title} />
 
-        <div className="flex flex-1 flex-col gap-4 p-4">
+        <div className="flex flex-1 flex-col gap-5 p-6">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
+              <p className="text-muted-foreground text-xs font-semibold tracking-[0.18em] uppercase">
+                Tecnologías utilizadas
+              </p>
               <div className="flex items-center gap-2">
-                <h3 className="text-lg font-semibold">{project.title}</h3>
+                <h3 className="text-xl font-bold tracking-tight">
+                  {project.title}
+                </h3>
                 {project.featured ? (
                   <span className="border-border/60 bg-primary/10 text-primary rounded-full border px-3 py-1 text-xs font-semibold tracking-[0.24em] uppercase">
                     Featured

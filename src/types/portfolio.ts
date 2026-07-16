@@ -6,7 +6,12 @@ export interface Experience {
 
   role: string;
 
-  employmentType: 'Tiempo completo' | 'Contrato' | 'Prácticas';
+  employmentType:
+    | 'Tiempo completo'
+    | 'Contrato'
+    | 'Prácticas'
+    | 'Proyecto Personal'
+    | 'Contrato de Aprendizaje';
 
   location: string;
 
@@ -43,6 +48,7 @@ export interface Certification {
   name: string;
   issuer: string;
   issueDate: string;
+  status: 'completed' | 'in-progress';
   credentialUrl?: string;
   badge?: string;
 }

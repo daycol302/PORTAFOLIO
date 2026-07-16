@@ -8,9 +8,9 @@ export function Skills() {
     <Section id="skills" variant="muted">
       <Container>
         <SectionTitle
-          eyebrow="Habilidades"
-          title="Tecnologías que uso en mis proyectos"
-          description="Integro las mejores prácticas de cloud, infraestructura y desarrollo para construir soluciones confiables y escalables."
+          eyebrow="Competencias"
+          title="Tecnologías y competencias profesionales"
+          description="Mi experiencia combina infraestructura empresarial, plataformas Microsoft, desarrollo moderno y el aprendizaje continuo en Cloud Computing para construir soluciones eficientes y escalables."
         />
 
         <SkillsGrid />

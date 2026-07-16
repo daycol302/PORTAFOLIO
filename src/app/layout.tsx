@@ -50,14 +50,26 @@ export default function RootLayout({
     '@type': 'Person',
     name: siteConfig.author.name,
     url: siteConfig.url,
+    image: `${siteConfig.url}${siteConfig.image}`,
     email: `mailto:${siteConfig.links.email}`,
-    jobTitle: siteConfig.description,
-    worksFor: {
-      '@type': 'Organization',
-      name: siteConfig.name,
+    jobTitle: siteConfig.author.role,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Bogotá',
+      addressCountry: 'CO',
     },
     sameAs: [siteConfig.links.linkedin, siteConfig.links.github],
     description: siteConfig.description,
+    knowsAbout: [
+      'AWS',
+      'Microsoft 365',
+      'Active Directory',
+      'Windows Server',
+      'Cloud Computing',
+      'IT Infrastructure',
+      'Networking',
+      'PowerShell',
+    ],
   };
 
   return (

@@ -1,24 +1,41 @@
 export const siteConfig = {
   name: 'Daynover García',
+  title: 'Infrastructure & Cloud Engineer',
   description:
-    'Cloud & Infrastructure Engineer | AWS | Automatización | DevOps',
+    'Infrastructure & Cloud Engineer | Infraestructura TI | Microsoft 365 | Active Directory | AWS Cloud',
+
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
+
   locale: 'es',
+
   image: '/og-image.png',
+
   keywords: [
+    'Infrastructure Engineer',
+    'Cloud Engineer',
     'AWS',
-    'Cloud',
-    'Infrastructure',
-    'DevOps',
-    'Docker',
+    'Microsoft 365',
+    'Active Directory',
+    'Windows Server',
+    'Azure',
+    'Networking',
+    'IT Infrastructure',
+    'IT Support',
+    'PowerShell',
     'Next.js',
     'TypeScript',
-    'Software Engineer',
   ] as string[],
+
   author: {
-    name: 'Daynover Garcia Zapata',
+    name: 'Daynover García Zapata',
+
+    role: 'Infrastructure & Cloud Engineer',
+
+    location: 'Bogotá D.C., Colombia',
+
     twitter: 'DaynoverGZ',
   },
+
   nav: [
     { label: 'Inicio', href: '#hero' },
     { label: 'Sobre mí', href: '#about' },
@@ -28,14 +45,17 @@ export const siteConfig = {
     { label: 'Certificaciones', href: '#certifications' },
     { label: 'Contacto', href: '#contact' },
   ],
+
   links: {
     github: 'https://github.com/daynovergarcia',
+
     linkedin: 'https://www.linkedin.com/in/daynovergarcia',
-    email: 'daynover.garcia@example.com',
+
+    email: 'daynovergarcia@gmail.com',
+
     cv: '/cv.pdf',
   },
 } as const;
 
 export type SiteConfig = typeof siteConfig;
-
 export type NavItem = (typeof siteConfig.nav)[number];

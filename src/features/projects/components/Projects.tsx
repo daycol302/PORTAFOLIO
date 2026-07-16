@@ -10,8 +10,8 @@ export default function Projects() {
       <Container>
         <SectionTitle
           eyebrow="Proyectos"
-          title="Algunos proyectos destacados"
-          description="Aplicaciones y laboratorios desarrollados para fortalecer mis conocimientos en desarrollo, infraestructura y Cloud Computing."
+          title="Proyectos que reflejan mi experiencia profesional"
+          description="Una selección de proyectos y laboratorios que demuestran mi experiencia en infraestructura, desarrollo y el proceso de especialización que estoy llevando hacia Cloud Computing."
         />
 
         <ProjectsGrid />

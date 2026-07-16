@@ -28,7 +28,7 @@ export default function HeroContent() {
         </div>
         <div>
           <p className="text-primary text-sm font-semibold tracking-widest uppercase">
-            Hola, soy
+            Disponible para nuevas oportunidades
           </p>
           <p className="text-muted-foreground text-xs">{profile.location}</p>
         </div>
@@ -38,17 +38,24 @@ export default function HeroContent() {
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
           Daynover <span className="text-primary">García Zapata</span>
         </h1>
+
+        <p className="text-primary mt-2 text-sm font-semibold tracking-[0.2em] uppercase">
+          Cloud • Infrastructure • Datacenter
+        </p>
       </div>
 
       <h2 className="text-lg leading-tight font-medium sm:text-xl lg:text-2xl">
-        Construyo plataformas cloud modernas, seguras y preparadas para crecer.
+        Ingeniero de Sistemas en formación enfocado en Cloud, Infraestructura y
+        Soluciones Empresariales.
       </h2>
 
       <p className="text-muted-foreground max-w-xl text-base leading-8 sm:text-lg">
-        Cloud & Infrastructure Engineer especializado en AWS, Azure y DevOps.
-        Desarrollo soluciones enfocadas en automatización, disponibilidad y
-        escalabilidad, aplicando buenas prácticas para crear infraestructuras
-        eficientes, seguras y fáciles de mantener.
+        Cuento con más de 3 años de experiencia en soporte técnico N1/N2,
+        administración de infraestructura TI y operaciones de Datacenter. He
+        trabajado con Microsoft 365, Active Directory, Windows Server y
+        Microsoft Azure, mientras continúo fortaleciendo mis conocimientos en
+        AWS, automatización y ciberseguridad para evolucionar hacia roles de
+        Cloud Infrastructure.
       </p>
 
       <HeroActions />

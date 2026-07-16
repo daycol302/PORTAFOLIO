@@ -22,7 +22,10 @@ export function createMetadata({
   return {
     title: title
       ? title
-      : { default: siteConfig.name, template: `%s | ${siteConfig.name}` },
+      : {
+          default: `${siteConfig.author.name} | ${siteConfig.author.role}`,
+          template: `%s | ${siteConfig.author.name}`,
+        },
     description: description || undefined,
     metadataBase: new URL(siteConfig.url),
     verification: {
@@ -43,11 +46,11 @@ export function createMetadata({
       url: canonicalUrl,
       title: pageTitle,
       description: description || undefined,
-      siteName: siteConfig.name,
+      siteName: siteConfig.author.name,
       images: [
         {
           url: imageUrl,
-          alt: `${siteConfig.name} | ${description}`,
+          alt: `${siteConfig.author.name} | ${siteConfig.author.role}`,
           type: 'image/png',
         },
       ],
@@ -60,7 +63,20 @@ export function createMetadata({
       images: [imageUrl],
     },
     robots: noIndex
-      ? { index: false, follow: false }
-      : { index: true, follow: true },
+      ? {
+          index: false,
+          follow: false,
+        }
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+          },
+        },
   };
 }

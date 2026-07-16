@@ -1,39 +1,43 @@
 export const aboutData = {
   title: 'Sobre mí',
 
-  subtitle: 'Cloud & Infrastructure Engineer',
+  subtitle: 'Infraestructura TI • Cloud Computing • Datacenter',
 
-  description: `Profesional de TI con más de tres años de experiencia en soporte técnico N1/N2 e infraestructura corporativa. He trabajado con Active Directory, Microsoft 365, Windows Server, redes y atención a usuarios en entornos empresariales.
+  description: `
+Soy estudiante de Ingeniería de Sistemas y cuento con más de tres años de experiencia en soporte técnico N1/N2, administración de infraestructura TI y operación de Datacenter en entornos corporativos.
 
-Actualmente estoy enfocando mi carrera hacia Cloud Computing, AWS e Infraestructura Moderna mediante proyectos reales, certificaciones y aprendizaje continuo.`,
+A lo largo de mi trayectoria he trabajado con Microsoft 365, Active Directory, Windows Server, redes, Azure y soporte empresarial, participando en proyectos de infraestructura, automatización y mejora continua.
+
+Actualmente estoy fortaleciendo mi perfil profesional en AWS Cloud, Infraestructura Moderna, IA, ML, DL y Ciberseguridad mediante certificaciones, laboratorios prácticos y proyectos personales, con el objetivo de evolucionar hacia roles de Cloud Infrastructure Engineer.
+`,
 
   highlights: [
-    '3+ años de experiencia profesional',
-    'Active Directory',
+    'Cloud Computing',
+    'Microsoft Azure',
     'Microsoft 365',
+    'Active Directory',
     'Windows Server',
-    'Networking',
-    'AWS Cloud',
-    'Virtualización',
-    'Automatización',
+    'Datacenter',
+    'Power BI',
+    'AWS Learning',
   ],
 
   stats: [
     {
       value: '3+',
-      label: 'Años',
+      label: 'Años de experiencia',
+    },
+    {
+      value: '5',
+      label: 'Empresas',
     },
     {
       value: '20+',
       label: 'Tecnologías',
     },
     {
-      value: '2',
-      label: 'Certificaciones AWS',
-    },
-    {
-      value: '100%',
-      label: 'Compromiso',
+      value: '24/7',
+      label: 'Aprendizaje continuo',
     },
   ],
 };

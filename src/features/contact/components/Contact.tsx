@@ -16,8 +16,8 @@ export function Contact() {
           <div className="space-y-6">
             <SectionTitle
               eyebrow="Contacto"
-              title="Conectemos"
-              description="Estoy listo para colaborar en proyectos de cloud, infraestructura y desarrollo. Usa los enlaces para escribirme o descargar mi CV."
+              title="¿Hablamos sobre tu próximo proyecto?"
+              description="Actualmente estoy abierto a nuevas oportunidades en Infraestructura TI, Cloud Computing y Soporte Empresarial. Si crees que mi perfil puede aportar valor a tu equipo, estaré encantado de conversar."
             />
 
             <div className="grid gap-4">
@@ -28,17 +28,18 @@ export function Contact() {
 
             <Card className="overflow-hidden">
               <div className="space-y-3 p-4">
-                <h3 className="text-foreground text-lg font-semibold">
-                  CV disponible
+                <h3 className="text-foreground text-xl font-bold tracking-tight">
+                  Currículum Vitae
                 </h3>
                 <p className="text-muted-foreground text-sm leading-7">
-                  Descarga mi currículum actualizado para ver mi experiencia y
-                  habilidades de forma rápida.
+                  Descarga la versión más reciente de mi hoja de vida para
+                  conocer en detalle mi experiencia profesional, proyectos,
+                  certificaciones y competencias técnicas.
                 </p>
 
                 <Button asChild variant="default" className="mt-4">
                   <a href={siteConfig.links.cv} download>
-                    Descargar CV
+                    Descargar hoja de vida
                   </a>
                 </Button>
               </div>

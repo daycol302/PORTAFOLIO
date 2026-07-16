@@ -69,14 +69,12 @@ export function ContactForm() {
             Contacto directo
           </p>
           <h3 className="text-foreground mt-3 text-2xl font-semibold">
-            Cuéntame qué necesitas construir
+            Hablemos sobre nuevas oportunidades
           </h3>
           <p className="text-muted-foreground mt-4 text-sm leading-7">
-            Este formulario valida cada campo antes de enviarlo: nombre, correo,
-            asunto y mensaje. Si algún dato es inválido, se muestra la causa
-            exacta (ejemplo: correo incorrecto, mensaje demasiado corto). Los
-            mensajes se envían mediante Resend y el endpoint está protegido
-            contra abusos con un límite de 5 solicitudes por minuto por IP.
+            Si deseas hablar sobre una oportunidad laboral, colaboración o
+            simplemente conocer más sobre mi experiencia profesional, estaré
+            encantado de responder tu mensaje lo antes posible.
           </p>
         </div>
 
@@ -87,7 +85,7 @@ export function ContactForm() {
               <input
                 type="text"
                 name="name"
-                placeholder="Tu nombre"
+                placeholder="Ej. Juan Pérez"
                 className={inputClasses}
                 required
                 minLength={2}
@@ -101,7 +99,7 @@ export function ContactForm() {
               <input
                 type="email"
                 name="email"
-                placeholder="tu@correo.com"
+                placeholder="nombre@empresa.com"
                 className={inputClasses}
                 required
               />
@@ -113,7 +111,7 @@ export function ContactForm() {
             <input
               type="text"
               name="subject"
-              placeholder="Necesito ayuda con…"
+              placeholder="Oportunidad laboral, colaboración..."
               className={inputClasses}
               required
               minLength={4}
@@ -125,7 +123,7 @@ export function ContactForm() {
             <textarea
               name="message"
               rows={5}
-              placeholder="Cuéntame sobre tu proyecto"
+              placeholder="Hola Daynover, me gustaría hablar contigo sobre..."
               className={inputClasses}
               required
               minLength={20}
@@ -136,13 +134,13 @@ export function ContactForm() {
             <p className="text-muted-foreground text-sm" aria-live="polite">
               {status === 'success' ? (
                 <span className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">
-                  <CheckCircle2 className="size-4" /> Mensaje recibido.
-                  ¡Gracias!
+                  <CheckCircle2 className="size-4" /> ¡Gracias! Tu mensaje fue
+                  enviado correctamente.
                 </span>
               ) : status === 'error' ? (
                 errorMessage // ✅ muestra la causa exacta
               ) : (
-                'Responderé lo antes posible.'
+                'Normalmente respondo en menos de 24 horas.'
               )}
             </p>
 
@@ -156,7 +154,7 @@ export function ContactForm() {
               ) : (
                 <Send />
               )}
-              {status === 'sending' ? 'Enviando' : 'Enviar mensaje'}
+              {status === 'sending' ? 'Enviando' : 'Enviar consulta'}
             </Button>
           </div>
         </form>

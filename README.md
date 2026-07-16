@@ -1,122 +1,212 @@
-# 🚀 Portafolio - Daynover García Zapata
+# 🚀 Daynover Portfolio
 
-Portafolio profesional desarrollado con **Next.js 15**, **React 19**, **TypeScript** y **Tailwind CSS**, diseñado para presentar mi experiencia, proyectos y habilidades como Desarrollador Full Stack.
+> Portafolio profesional desarrollado con Next.js 15, TypeScript y una arquitectura modular orientada por funcionalidades (Feature-Based Architecture). Diseñado bajo principios de rendimiento, seguridad, mantenibilidad y escalabilidad.
 
-## ✨ Características
+![Next.js](https://img.shields.io/badge/Next.js-15-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![React](https://img.shields.io/badge/React-19-61DAFB)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Vercel](https://img.shields.io/badge/Deploy-Vercel-black)
+![Status](https://img.shields.io/badge/Status-Production-success)
 
-- ⚡ Next.js App Router
-- 🎨 Diseño responsive
-- 🌙 Modo oscuro
-- 📧 Formulario de contacto con Resend
-- 🛡️ Rate Limiting con Upstash Redis
-- 🔍 SEO optimizado (Metadata, Sitemap, Robots, JSON-LD)
-- 📈 Preparado para Vercel Analytics
-- ♿ Accesibilidad y buenas prácticas
+---
 
-## 🛠️ Tecnologías
+# 📖 Descripción
 
-### Frontend
+Este proyecto corresponde a mi portafolio profesional como desarrollador Full Stack.
 
-- Next.js 15
-- React 19
-- TypeScript
+No fue construido únicamente para mostrar proyectos, sino como una aplicación moderna que refleja buenas prácticas de ingeniería de software, incluyendo:
+
+- Arquitectura modular.
+- Calidad de código.
+- Seguridad.
+- SEO.
+- Accesibilidad.
+- Observabilidad.
+- Despliegue continuo.
+
+El objetivo es demostrar tanto habilidades de desarrollo como de diseño de software y operaciones.
+
+---
+
+# ✨ Características
+
+- Arquitectura Feature-Based
+- Next.js App Router
+- TypeScript estricto
 - Tailwind CSS
-
-### Backend
-
-- Next.js Route Handlers
+- Animaciones con Framer Motion
+- SEO avanzado
+- JSON-LD
+- Sitemap
+- Robots.txt
+- API Contact
 - Resend
-- Upstash Redis
+- Rate Limiting con Upstash Redis
+- Vercel Analytics
+- Speed Insights
+- Responsive Design
+- Dark Mode
+- Validaciones frontend y backend
+- ESLint + Prettier
+- Husky + lint-staged
 
-### DevOps
+---
 
-- GitHub
-- Vercel
-- Husky
-- ESLint
-- TypeScript
+# 🏗 Arquitectura
 
-## 📂 Arquitectura
+El proyecto sigue una arquitectura modular basada en funcionalidades.
 
-```text
+```
+
 src/
+│
 ├── app/
 ├── components/
 ├── config/
 ├── features/
 ├── hooks/
 ├── lib/
-├── providers/
-├── services/
-├── styles/
-├── types/
-└── utils/
+└── styles/
+
 ```
 
-## ⚙️ Variables de entorno
+Documentación completa:
 
-Crea un archivo `.env.local`:
+📄 docs/01-arquitectura.md
 
-```env
-RESEND_API_KEY=
-UPSTASH_REDIS_REST_URL=
-UPSTASH_REDIS_REST_TOKEN=
-CONTACT_EMAIL=
-```
+---
 
-## 🚀 Instalación
+# 🛠 Stack Tecnológico
+
+| Tecnología       | Uso           |
+| ---------------- | ------------- |
+| Next.js 15       | Framework     |
+| React 19         | UI            |
+| TypeScript       | Tipado        |
+| Tailwind CSS     | Estilos       |
+| Framer Motion    | Animaciones   |
+| Resend           | Emails        |
+| Upstash Redis    | Rate Limiting |
+| Vercel           | Hosting       |
+| Vercel Analytics | Métricas      |
+| ESLint           | Calidad       |
+| Husky            | Git Hooks     |
+
+---
+
+# 🚀 Instalación
 
 ```bash
-git clone https://github.com/daycol302/PORTAFOLIO.git
-
-cd PORTAFOLIO
+git clone ...
 
 npm install
 
 npm run dev
 ```
 
-## ✅ Verificación
+---
 
-```bash
+# ⚙ Variables de entorno
+
+```
+RESEND_API_KEY=
+
+CONTACT_EMAIL=
+
+UPSTASH_REDIS_REST_URL=
+
+UPSTASH_REDIS_REST_TOKEN=
+```
+
+---
+
+# 📜 Scripts
+
+```
+npm run dev
+
+npm run build
+
+npm run lint
+
+npm run lint:fix
+
+npm run typecheck
+
 npm run check
 ```
 
-Este comando ejecuta:
+---
+
+# 🔐 Seguridad
+
+El proyecto implementa:
+
+- Validación frontend
+- Validación backend
+- Rate Limiting
+- Variables de entorno
+- Security Headers
+- CSP (pendiente de implementación)
+- HTTPS
+- Protección contra spam
+
+Más información:
+
+📄 SECURITY.md
+
+---
+
+# 📊 Calidad
+
+Antes de cada despliegue se ejecuta:
 
 - ESLint
 - TypeScript
-- Build de producción
+- Build
+- Husky
+- lint-staged
 
-## ☁️ Despliegue
+---
 
-El proyecto está preparado para desplegarse en **Vercel** con integración continua desde GitHub.
+# 🌐 Despliegue
 
-## 📧 API Contact
+Producción:
 
-El formulario utiliza:
+https://portafolio-ten-nu-85.vercel.app
 
-- Validación de datos
-- Resend
-- Upstash Redis
-- Rate Limiting
-- Manejo de errores
+Proveedor:
 
-## 📈 Roadmap
+Vercel
 
-- [x] Responsive
-- [x] SEO
-- [x] Formulario
-- [x] Rate Limiting
-- [x] Resend
-- [ ] Sentry
-- [ ] Analytics
-- [ ] Dominio personalizado
+---
 
-## 👨‍💻 Autor
+# 📚 Documentación
 
-**Daynover García Zapata**
+| Documento                | Descripción         |
+| ------------------------ | ------------------- |
+| docs/00-roadmap.md       | Roadmap             |
+| docs/01-arquitectura.md  | Arquitectura        |
+| docs/02-design-system.md | Sistema de diseño   |
+| docs/03-decisiones.md    | Decisiones técnicas |
+| docs/04-backlog.md       | Backlog             |
+| docs/05-estandares.md    | Estándares          |
 
-LinkedIn: _(tu enlace)_
+---
 
-GitHub: https://github.com/daycol302
+# 🗺 Roadmap
+
+Consultar:
+
+docs/00-roadmap.md
+
+---
+
+# 📄 Licencia
+
+Este proyecto se distribuye bajo una licencia **All Rights Reserved**.
+
+Su código fuente puede consultarse con fines educativos, pero no puede copiarse, redistribuirse o comercializarse sin autorización del autor.
+
+Consulte el archivo **LICENSE** para más información.
