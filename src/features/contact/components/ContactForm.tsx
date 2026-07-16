@@ -66,8 +66,11 @@ export function ContactForm() {
             Cuéntame qué necesitas construir
           </h3>
           <p className="text-muted-foreground mt-4 text-sm leading-7">
-            Este formulario usa un endpoint de demostración. Conecta Resend u
-            otro proveedor de correo para recibir los mensajes en producción.
+            Este formulario valida cada campo antes de enviarlo: nombre, correo,
+            asunto y mensaje. Si algún dato es inválido, se muestra la causa
+            exacta (ejemplo: correo incorrecto, mensaje demasiado corto). Los
+            mensajes se envían mediante Resend y el endpoint está protegido
+            contra abusos con un límite de 5 solicitudes por minuto por IP.
           </p>
         </div>
 

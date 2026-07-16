@@ -68,7 +68,7 @@ export async function POST(request: Request) {
     // Enviar correo con Resend
     const { data, error } = await resend.emails.send({
       from: 'onboarding@resend.dev', // válido para pruebas
-      to: 'daynovergarcia@gmail.com', // tu correo
+      to: process.env.CONTACT_EMAIL!, // tu correo
       subject: `Nuevo mensaje: ${body.subject}`,
       text: `Nombre: ${body.name}\nCorreo: ${body.email}\n\n${body.message}`,
     });
