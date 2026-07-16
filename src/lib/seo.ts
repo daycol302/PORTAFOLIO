@@ -25,6 +25,9 @@ export function createMetadata({
       : { default: siteConfig.name, template: `%s | ${siteConfig.name}` },
     description: description || undefined,
     metadataBase: new URL(siteConfig.url),
+    verification: {
+      google: process.env.GOOGLE_SITE_VERIFICATION,
+    },
     alternates: {
       canonical: canonicalUrl,
     },
