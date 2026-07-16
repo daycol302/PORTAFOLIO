@@ -14,12 +14,15 @@ type FormStatus = 'idle' | 'sending' | 'success' | 'error';
 
 export function ContactForm() {
   const [status, setStatus] = useState<FormStatus>('idle');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus('sending');
+    setErrorMessage(null);
 
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
 
     try {
@@ -29,12 +32,21 @@ export function ContactForm() {
         body: JSON.stringify(payload),
       });
 
-      if (!response.ok) throw new Error('No fue posible enviar el mensaje');
+      const result = await response.json();
 
-      event.currentTarget.reset();
+      if (!response.ok) {
+        // Guardamos el mensaje exacto que viene del backend
+        setStatus('error');
+        setErrorMessage(result.message || 'No fue posible enviar el mensaje');
+        return;
+      }
+
+      form.reset();
       setStatus('success');
-    } catch {
+    } catch (error: any) {
+      console.error(error);
       setStatus('error');
+      setErrorMessage(error.message || 'Error inesperado');
     }
   };
 
@@ -119,7 +131,7 @@ export function ContactForm() {
                   ¡Gracias!
                 </span>
               ) : status === 'error' ? (
-                'No se pudo enviar. Inténtalo de nuevo.'
+                errorMessage // ✅ muestra la causa exacta
               ) : (
                 'Responderé lo antes posible.'
               )}
