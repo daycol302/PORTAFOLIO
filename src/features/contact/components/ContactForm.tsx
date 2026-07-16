@@ -32,7 +32,11 @@ export function ContactForm() {
         body: JSON.stringify(payload),
       });
 
-      const result = await response.json();
+      type ContactResponse = {
+        message: string;
+      };
+
+      const result = (await response.json()) as ContactResponse;
 
       if (!response.ok) {
         // Guardamos el mensaje exacto que viene del backend
@@ -43,10 +47,12 @@ export function ContactForm() {
 
       form.reset();
       setStatus('success');
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error(error);
       setStatus('error');
-      setErrorMessage(error.message || 'Error inesperado');
+      setErrorMessage(
+        error instanceof Error ? error.message : 'Error inesperado',
+      );
     }
   };
 
