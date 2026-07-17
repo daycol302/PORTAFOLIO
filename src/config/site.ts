@@ -4,7 +4,9 @@ export const siteConfig = {
   description:
     'Infrastructure & Cloud Engineer | Infraestructura TI | Microsoft 365 | Active Directory | AWS Cloud',
 
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    'https://portafolio-ten-nu-85.vercel.app',
 
   locale: 'es',
 
@@ -47,9 +49,9 @@ export const siteConfig = {
   ],
 
   links: {
-    github: 'https://github.com/daynovergarcia',
+    github: 'https://github.com/daycol302',
 
-    linkedin: 'https://www.linkedin.com/in/daynovergarcia',
+    linkedin: 'https://www.linkedin.com/in/daynover-garcia-zapata-b35311121/',
 
     email: 'daynovergarcia@gmail.com',
 

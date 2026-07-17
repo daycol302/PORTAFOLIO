@@ -6,7 +6,7 @@ export const experiences: Experience[] = [
 
     company: 'Infomedia Service',
 
-    role: 'Project & Infrastructure Support Engineer',
+    role: 'Project and Infrastructure Support Technician and LAN Analyst',
 
     employmentType: 'Tiempo completo',
 
@@ -21,21 +21,26 @@ export const experiences: Experience[] = [
     current: true,
 
     description: [
-      'Administración de infraestructura desplegada sobre Microsoft Azure.',
-      'Desarrollo y optimización de funcionalidades backend en C#.',
-      'Administración y optimización de bases de datos MySQL.',
-      'Diagnóstico y resolución de incidencias en ambientes productivos.',
-      'Configuración y mantenimiento de servidores.',
-      'Mejora continua del rendimiento y estabilidad de la plataforma.',
+      'Implementación, instalación y soporte técnico de plataformas empresariales para clientes corporativos.',
+      'Configuración, mantenimiento preventivo y correctivo de servidores, dispositivos de red y equipos tecnológicos.',
+      'Soporte técnico de Nivel 1 y Nivel 2 para soluciones de IPTV, cartelería digital (Digital Signage) y Tótems interactivos.',
+      'Participación en ventanas de migración y despliegue de infraestructura junto al equipo de ingeniería.',
+      'Diagnóstico y resolución de incidentes en ambientes productivos, cumpliendo SLA y tiempos de respuesta.',
+      'Levantamiento de información técnica en sitio para nuevos proyectos e implementaciones.',
+      'Gestión de inventario, validación, preparación y entrega de equipos tecnológicos para clientes.',
+      'Elaboración de informes técnicos y seguimiento de actividades de soporte y proyectos.',
+      'Colaboración con ingenieros y especialistas para garantizar la continuidad operacional y la satisfacción del cliente.',
     ],
 
     technologies: [
-      'Microsoft Azure',
-      'C#',
-      'MySQL',
       'Windows Server',
-      'Git',
-      'Azure DevOps',
+      'Active Directory',
+      'IPTV',
+      'Digital Signage',
+      'Networking',
+      'Troubleshooting',
+      'Project Deployment',
+      'IT Support',
     ],
   },
   {

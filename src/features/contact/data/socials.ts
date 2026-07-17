@@ -6,13 +6,13 @@ export const socials: ContactMethod[] = [
     name: 'GitHub',
     url: siteConfig.links.github,
     icon: 'github',
-    label: 'github.com/daynovergarcia',
+    label: 'github.com/daycol302',
   },
   {
     name: 'LinkedIn',
     url: siteConfig.links.linkedin,
     icon: 'linkedin',
-    label: 'linkedin.com/in/daynovergarcia',
+    label: 'linkedin.com/in/daynover-garcia-zapata-b35311121',
   },
   {
     name: 'Correo',

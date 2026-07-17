@@ -10,5 +10,5 @@ export const profile = {
     es: 'Abierto a oportunidades',
   },
 
-  image: '/images/profile.jpg',
+  image: '/images/profile.png',
 } as const;

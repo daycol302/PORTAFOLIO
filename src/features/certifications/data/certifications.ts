@@ -14,7 +14,32 @@ export const certifications: Certification[] = [
 
     credentialUrl: '#',
   },
+  {
+    id: 'scrum',
 
+    name: 'Scrum Foundation Professional Certification SFPC™',
+
+    issuer: 'CertiProf',
+
+    issueDate: '2024',
+
+    status: 'completed',
+
+    credentialUrl: '#',
+  },
+  {
+    id: 'cybersecurity',
+
+    name: 'Cybersecurity Awareness Learner',
+
+    issuer: 'CertiProf',
+
+    issueDate: '2024',
+
+    status: 'completed',
+
+    credentialUrl: '#',
+  },
   {
     id: 'aws-cloud-practitioner',
 

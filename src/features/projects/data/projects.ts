@@ -13,9 +13,9 @@ export const projects: Project[] = [
 
     image: '/images/projects/portfolio.png',
 
-    github: '#',
+    github: 'https://github.com/daycol302/PORTAFOLIO',
 
-    demo: '#',
+    demo: 'https://portafolio-ten-nu-85.vercel.app/',
 
     featured: true,
 
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     description:
       'Colección de laboratorios enfocados en comprender los principales servicios de AWS mediante implementaciones prácticas, siguiendo buenas prácticas de seguridad y administración de infraestructura.',
 
-    image: '/images/projects/aws-learning-lab.png',
+    image: '/images/projects/aws_project.png',
 
     github: '#',
 
