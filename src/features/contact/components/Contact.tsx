@@ -1,3 +1,5 @@
+'use client';
+
 import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
 import { SectionTitle } from '@/components/ui/section-title';
@@ -7,17 +9,19 @@ import { ContactForm } from './ContactForm';
 import { ContactInfoCard } from './ContactInfoCard';
 import { socials } from '@/features/contact/data/socials';
 import { siteConfig } from '@/config/site';
+import { useI18n } from '@/i18n/provider';
 
 export function Contact() {
+  const { dictionary } = useI18n();
   return (
     <Section id="contact" variant="muted">
       <Container>
         <div className="grid gap-8 xl:grid-cols-[1.15fr_0.85fr]">
           <div className="space-y-6">
             <SectionTitle
-              eyebrow="Contacto"
-              title="¿Hablamos sobre tu próximo proyecto?"
-              description="Actualmente estoy abierto a nuevas oportunidades en Infraestructura TI, Cloud Computing y Soporte Empresarial. Si crees que mi perfil puede aportar valor a tu equipo, estaré encantado de conversar."
+              eyebrow={dictionary.contact.eyebrow}
+              title={dictionary.contact.title}
+              description={dictionary.contact.description}
             />
 
             <div className="grid gap-4">
@@ -29,17 +33,15 @@ export function Contact() {
             <Card className="overflow-hidden">
               <div className="space-y-3 p-4">
                 <h3 className="text-foreground text-xl font-bold tracking-tight">
-                  Currículum Vitae
+                  {dictionary.contact.cv}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-7">
-                  Descarga la versión más reciente de mi hoja de vida para
-                  conocer en detalle mi experiencia profesional, proyectos,
-                  certificaciones y competencias técnicas.
+                  {dictionary.contact.cvDescription}
                 </p>
 
                 <Button asChild variant="default" className="mt-4">
                   <a href={siteConfig.links.cv} download>
-                    Descargar hoja de vida
+                    {dictionary.contact.download}
                   </a>
                 </Button>
               </div>

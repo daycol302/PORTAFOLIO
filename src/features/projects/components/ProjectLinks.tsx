@@ -3,6 +3,7 @@
 import { ExternalLink, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import { useI18n } from '@/i18n/provider';
 
 type Props = {
   github?: string;
@@ -10,14 +11,15 @@ type Props = {
 };
 
 export function ProjectLinks({ github, demo }: Props) {
+  const { dictionary } = useI18n();
   const links = [
     {
-      label: 'Repositorio',
+      label: dictionary.common.repository,
       href: github,
       icon: Github,
     },
     {
-      label: 'Ver proyecto',
+      label: dictionary.common.viewProject,
       href: demo,
       icon: ExternalLink,
     },

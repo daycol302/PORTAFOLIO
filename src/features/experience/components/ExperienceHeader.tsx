@@ -1,3 +1,4 @@
+'use client';
 type ExperienceHeaderProps = {
   role: string;
   company: string;
@@ -19,6 +20,7 @@ export function ExperienceHeader({
   end,
   current,
 }: ExperienceHeaderProps) {
+  const { dictionary } = useI18n();
   return (
     <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
       <div className="flex-1">
@@ -39,16 +41,18 @@ export function ExperienceHeader({
       <div className="flex flex-col items-start gap-3 md:items-end">
         {/* Fecha */}
         <span className="border-primary/20 bg-primary/10 text-primary rounded-full border px-4 py-2 text-sm font-semibold">
-          {start} · {current ? 'Actualidad' : end}
+          {start} · {current ? dictionary.common.current : end}
         </span>
 
         {/* Badge empleo actual */}
         {current && (
           <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
-            ● Actualmente
+            ● {dictionary.common.current}
           </span>
         )}
       </div>
     </div>
   );
 }
+
+import { useI18n } from '@/i18n/provider';

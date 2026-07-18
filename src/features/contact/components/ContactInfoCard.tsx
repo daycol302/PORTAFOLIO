@@ -5,6 +5,7 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import type { ContactMethod } from '../types';
+import { useI18n } from '@/i18n/provider';
 
 const iconMap = {
   github: Github,
@@ -20,6 +21,7 @@ interface ContactInfoCardProps {
 
 export function ContactInfoCard({ method }: ContactInfoCardProps) {
   const Icon = iconMap[method.icon as ContactIconKey] ?? Mail;
+  const { dictionary } = useI18n();
 
   return (
     <motion.div
@@ -49,10 +51,10 @@ export function ContactInfoCard({ method }: ContactInfoCardProps) {
         >
           <a href={method.url} target="_blank" rel="noreferrer">
             {method.name === 'LinkedIn'
-              ? 'Ver perfil'
+              ? dictionary.contact.profile
               : method.name === 'GitHub'
-                ? 'Ver repositorios'
-                : 'Enviar correo'}
+                ? dictionary.contact.repositories
+                : dictionary.contact.emailAction}
           </a>
         </Button>
       </Card>

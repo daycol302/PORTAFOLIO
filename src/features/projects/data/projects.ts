@@ -1,4 +1,5 @@
 import type { Project } from '@/types/portfolio';
+import type { Locale } from '@/i18n/config';
 
 export const projects: Project[] = [
   {
@@ -160,3 +161,66 @@ export const projects: Project[] = [
     architecture: 'SQL → Power BI → Dashboards → Indicadores',
   },
 ];
+
+const englishProjects: Record<string, Partial<Project>> = {
+  portfolio: {
+    subtitle: 'Professional portfolio built with Next.js and TypeScript',
+    description:
+      'Web application designed to showcase my professional experience, projects, and skills in IT Infrastructure, Cloud Computing, and Development. Built with a modern architecture focused on performance, scalability, and maintainability.',
+    highlights: [
+      'Highly scalable Feature-First architecture.',
+      'Fully responsive design.',
+      'SEO and performance optimization.',
+      'Persistent light and dark mode.',
+      'Reusable components and strict typing.',
+    ],
+    metric: 'Optimized for a high Performance, SEO, and Accessibility score.',
+  },
+  'aws-learning-lab': {
+    subtitle: 'Hands-on labs to strengthen AWS Cloud knowledge',
+    description:
+      'A collection of labs focused on understanding core AWS services through hands-on implementations, following security and infrastructure-management best practices.',
+    highlights: [
+      'IAM user and policy configuration.',
+      'EC2 instance deployment.',
+      'Amazon S3 storage administration.',
+      'Basic VPC network configuration.',
+      'CloudWatch monitoring.',
+    ],
+    metric: 'Labs completed while preparing for AWS certifications.',
+  },
+  'enterprise-infrastructure': {
+    subtitle: 'Corporate infrastructure and Microsoft services administration',
+    description:
+      'Hands-on experience administering Microsoft platforms, Active Directory, Windows Server, and Microsoft 365, supporting incident resolution, user management, and enterprise support.',
+    highlights: [
+      'Active Directory administration.',
+      'Microsoft 365 management.',
+      'Windows Server administration.',
+      'N1 and N2 technical support.',
+      'Enterprise incident resolution.',
+    ],
+    metric: 'Over three years of experience in corporate environments.',
+  },
+  'powerbi-dashboard': {
+    subtitle: 'Dashboard for operational KPI tracking',
+    description:
+      'Project focused on visualizing operational information with Power BI to simplify KPI analysis and support decision-making in enterprise environments.',
+    highlights: [
+      'KPI visualization.',
+      'Interactive dashboards.',
+      'Information analysis.',
+      'Report optimization.',
+    ],
+    metric: 'Reduced information lookup time through centralized dashboards.',
+    architecture: 'SQL → Power BI → Dashboards → KPIs',
+  },
+};
+
+export function getProjects(locale: Locale): Project[] {
+  if (locale === 'es') return projects;
+  return projects.map((project) => ({
+    ...project,
+    ...englishProjects[project.id],
+  }));
+}

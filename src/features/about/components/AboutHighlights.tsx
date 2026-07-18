@@ -3,16 +3,19 @@
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 
-import { aboutData } from '../data/about';
 import { Card } from '@/components/ui/card';
+import { useI18n } from '@/i18n/provider';
 
 export function AboutHighlights() {
+  const { dictionary } = useI18n();
   return (
     <Card>
-      <h3 className="mb-6 text-xl font-semibold">Fortalezas</h3>
+      <h3 className="mb-6 text-xl font-semibold">
+        {dictionary.about.strengths}
+      </h3>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {aboutData.highlights.map((item) => (
+        {dictionary.about.highlights.map((item) => (
           <motion.div
             key={item}
             initial={{ opacity: 0, y: 16 }}

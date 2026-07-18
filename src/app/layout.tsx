@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 
 import { ThemeProvider } from '@/components/providers/theme-provider';
+import { I18nProvider } from '@/i18n/provider';
 import { siteConfig } from '@/config/site';
 import { createMetadata } from '@/lib/seo';
 
@@ -78,12 +79,16 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} bg-background min-h-screen font-sans antialiased`}
       >
         <ThemeProvider>
-          <Navbar />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-          />
-          {children}
+          <I18nProvider>
+            <Navbar />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(structuredData),
+              }}
+            />
+            {children}
+          </I18nProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -7,12 +7,14 @@ import type { Experience } from '@/types/portfolio';
 
 import { ExperienceBadge } from './ExperienceBadge';
 import { ExperienceHeader } from './ExperienceHeader';
+import { useI18n } from '@/i18n/provider';
 
 type Props = {
   experience: Experience;
 };
 
 export function ExperienceItem({ experience }: Props) {
+  const { dictionary } = useI18n();
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -55,7 +57,7 @@ export function ExperienceItem({ experience }: Props) {
 
           <div className="mt-8">
             <p className="text-muted-foreground mb-3 text-xs font-semibold tracking-widest uppercase">
-              Tecnologías utilizadas
+              {dictionary.common.technologies}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               {experience.technologies.map((tech) => (

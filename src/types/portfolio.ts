@@ -11,11 +11,16 @@ export interface Experience {
     | 'Contrato'
     | 'Prácticas'
     | 'Proyecto Personal'
-    | 'Contrato de Aprendizaje';
+    | 'Contrato de Aprendizaje'
+    | 'Full-time'
+    | 'Apprenticeship contract'
+    | 'Personal project'
+    | 'Full-time'
+    | 'Full-time';
 
   location: string;
 
-  mode: 'Presencial' | 'Híbrido' | 'Remoto';
+  mode: 'Presencial' | 'Híbrido' | 'Remoto' | 'On-site' | 'Remote';
 
   start: string;
 

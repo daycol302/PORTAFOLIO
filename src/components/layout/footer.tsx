@@ -6,6 +6,7 @@ import { ArrowUp, Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
 import { siteConfig } from '@/config/site';
+import { useI18n } from '@/i18n/provider';
 
 const socialItems = [
   {
@@ -26,6 +27,12 @@ const socialItems = [
 ] as const;
 
 export function Footer() {
+  const { dictionary } = useI18n();
+  const localizedSocialItems = socialItems.map((item) =>
+    item.label === 'Correo'
+      ? { ...item, label: dictionary.footer.email }
+      : item,
+  );
   return (
     <motion.footer
       className="border-border bg-background border-t"
@@ -53,20 +60,16 @@ export function Footer() {
             </div>
 
             <p className="text-muted-foreground max-w-2xl leading-7">
-              Gracias por visitar mi portafolio. Estoy abierto a oportunidades
-              profesionales relacionadas con Infraestructura TI, Cloud
-              Computing, Administración de Plataformas Microsoft y Soporte
-              Empresarial. Si crees que puedo aportar valor a tu equipo, será un
-              gusto conversar.
+              {dictionary.footer.text}
             </p>
           </div>
 
           {/* Redes */}
           <div className="space-y-5">
-            <h3 className="text-lg font-bold">Conectemos</h3>
+            <h3 className="text-lg font-bold">{dictionary.footer.connect}</h3>
 
             <div className="flex flex-col gap-3">
-              {socialItems.map(({ label, href, Icon }) => (
+              {localizedSocialItems.map(({ label, href, Icon }) => (
                 <Button
                   key={label}
                   asChild
@@ -91,7 +94,7 @@ export function Footer() {
                 href="#hero"
                 className="flex items-center justify-center gap-2"
               >
-                Volver al inicio
+                {dictionary.footer.top}
                 <ArrowUp className="size-4" />
               </a>
             </Button>
@@ -102,11 +105,11 @@ export function Footer() {
 
         <div className="text-muted-foreground flex flex-col gap-3 text-sm md:flex-row md:items-center md:justify-between">
           <p>
-            © {new Date().getFullYear()} {siteConfig.author.name}. Todos los
-            derechos reservados.
+            © {new Date().getFullYear()} {siteConfig.author.name}.{' '}
+            {dictionary.footer.rights}
           </p>
 
-          <p>Desarrollado con Next.js, TypeScript y Tailwind CSS.</p>
+          <p>{dictionary.footer.built}</p>
         </div>
       </Container>
     </motion.footer>

@@ -1,10 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { experiences } from '../data/experience';
+import { getExperiences } from '../data/experience';
 import { ExperienceItem } from './ExperienceItem';
+import { useI18n } from '@/i18n/provider';
 
 export function ExperienceTimeline() {
+  const { locale } = useI18n();
+  const experiences = getExperiences(locale);
   return (
     <motion.div className="relative mt-20">
       <motion.div

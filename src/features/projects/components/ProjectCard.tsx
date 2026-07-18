@@ -10,12 +10,14 @@ import type { Project } from '@/types/portfolio';
 import { ProjectImage } from './ProjectImage';
 import { ProjectLinks } from './ProjectLinks';
 import { ProjectStatus } from './ProjectStatus';
+import { useI18n } from '@/i18n/provider';
 
 type Props = {
   project: Project;
 };
 
 export function ProjectCard({ project }: Props) {
+  const { dictionary } = useI18n();
   return (
     <motion.article
       initial={{ opacity: 0, y: 24 }}
@@ -32,7 +34,7 @@ export function ProjectCard({ project }: Props) {
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
               <p className="text-muted-foreground text-xs font-semibold tracking-[0.18em] uppercase">
-                Tecnologías utilizadas
+                {dictionary.common.technologies}
               </p>
               <div className="flex items-center gap-2">
                 <h3 className="text-xl font-bold tracking-tight">
@@ -40,7 +42,7 @@ export function ProjectCard({ project }: Props) {
                 </h3>
                 {project.featured ? (
                   <span className="border-border/60 bg-primary/10 text-primary rounded-full border px-3 py-1 text-xs font-semibold tracking-[0.24em] uppercase">
-                    Featured
+                    {dictionary.common.featured}
                   </span>
                 ) : null}
               </div>
@@ -69,7 +71,7 @@ export function ProjectCard({ project }: Props) {
           {project.architecture ? (
             <div className="border-primary/15 bg-primary/5 rounded-xl border p-3 text-sm">
               <p className="text-primary flex items-center gap-2 font-semibold">
-                <Network className="size-4" /> Arquitectura
+                <Network className="size-4" /> {dictionary.common.architecture}
               </p>
               <p className="text-muted-foreground mt-2 leading-6">
                 {project.architecture}

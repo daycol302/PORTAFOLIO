@@ -8,17 +8,30 @@ import {
   GitBranch,
   ShieldCheck,
 } from 'lucide-react';
-
-const services = [
-  { label: 'CI/CD pipeline', value: 'Healthy', icon: GitBranch },
-  { label: 'Infrastructure', value: 'Protected', icon: ShieldCheck },
-  { label: 'Observability', value: 'Online', icon: Activity },
-] as const;
+import { useI18n } from '@/i18n/provider';
 
 export default function HeroImage() {
+  const { dictionary } = useI18n();
+  const services = [
+    {
+      label: 'CI/CD pipeline',
+      value: dictionary.hero.healthy,
+      icon: GitBranch,
+    },
+    {
+      label: 'Infrastructure',
+      value: dictionary.hero.protected,
+      icon: ShieldCheck,
+    },
+    {
+      label: 'Observability',
+      value: dictionary.hero.serviceOnline,
+      icon: Activity,
+    },
+  ];
   return (
     <motion.aside
-      aria-label="Resumen de operaciones cloud"
+      aria-label={dictionary.hero.operations}
       initial={{ opacity: 0, x: 32 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.75, ease: 'easeOut' }}
@@ -40,13 +53,13 @@ export default function HeroImage() {
                   Cloud Operations
                 </p>
                 <p className="text-muted-foreground text-sm">
-                  Laboratorio de infraestructura
+                  {dictionary.hero.lab}
                 </p>
               </div>
             </div>
             <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
               <span className="size-2 animate-pulse rounded-full bg-emerald-500" />
-              En línea
+              {dictionary.hero.online}
             </span>
           </div>
 
@@ -70,7 +83,7 @@ export default function HeroImage() {
               ))}
             </div>
             <p className="text-muted-foreground mt-4 text-center text-xs">
-              Pipeline reproducible · Seguridad por diseño · Métricas visibles
+              {dictionary.hero.pipeline}
             </p>
           </div>
 

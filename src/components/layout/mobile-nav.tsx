@@ -6,8 +6,10 @@ import * as React from 'react';
 import { NavLinks } from '@/components/layout/nav-links';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { useI18n } from '@/i18n/provider';
 
 export function MobileNav() {
+  const { dictionary } = useI18n();
   const [open, setOpen] = React.useState(false);
 
   const close = React.useCallback(() => setOpen(false), []);
@@ -31,14 +33,16 @@ export function MobileNav() {
         onClick={() => setOpen((prev) => !prev)}
         aria-expanded={open}
         aria-controls="mobile-nav"
-        aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+        aria-label={
+          open ? dictionary.common.closeMenu : dictionary.common.openMenu
+        }
       >
         {open ? <X className="size-4" /> : <Menu className="size-4" />}
       </Button>
 
       <nav
         id="mobile-nav"
-        aria-label="Mobile navigation"
+        aria-label={dictionary.common.language}
         aria-hidden={!open}
         className={cn(
           'border-border bg-background/95 absolute inset-x-0 top-16 border-b backdrop-blur-md transition-all duration-200',

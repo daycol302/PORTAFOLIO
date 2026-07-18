@@ -182,6 +182,22 @@ Vercel
 
 ---
 
+# Internacionalización
+
+La interfaz está disponible en español e inglés. Español es el idioma por defecto; la primera visita puede usar el idioma compatible del navegador. El selector de la navegación conserva la página actual y persiste la preferencia en cookie y `localStorage`.
+
+Las traducciones viven en `src/i18n/dictionary.ts`, la configuración de idiomas en `src/i18n/config.ts` y el provider en `src/i18n/provider.tsx`. Consulte [docs/i18n.md](docs/i18n.md) para añadir idiomas o claves nuevas.
+
+# Decisiones técnicas
+
+- Se utiliza un provider React tipado en lugar de añadir una dependencia de traducción para mantener la aplicación ligera.
+- La estructura Feature First se conserva: i18n es una capacidad transversal y no mueve ni rediseña features.
+- El SEO incluye alternates `hreflang` para `es` y `en`.
+
+# Desarrollo y contribución
+
+Instale dependencias con `npm install`, ejecute `npm run dev` para desarrollo y `npm run build` para producción. Antes de enviar cambios, ejecute `npm run check`. Las convenciones de colaboración están documentadas en [CONTRIBUTING.md](CONTRIBUTING.md).
+
 # 📚 Documentación
 
 | Documento                | Descripción         |

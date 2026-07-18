@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion';
 
 import { Button } from '@/components/ui/button';
+import { useI18n } from '@/i18n/provider';
 
 export default function HeroActions() {
+  const { dictionary } = useI18n();
   return (
     <motion.div
       className="flex flex-col gap-3 sm:flex-row sm:items-center"
@@ -13,11 +15,11 @@ export default function HeroActions() {
       transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
     >
       <Button asChild className="w-full sm:w-auto" size="lg">
-        <a href="#projects">Ver proyectos</a>
+        <a href="#projects">{dictionary.hero.projects}</a>
       </Button>
 
       <Button asChild variant="outline" className="w-full sm:w-auto" size="lg">
-        <a href="#contact">Contáctame</a>
+        <a href="#contact">{dictionary.hero.contact}</a>
       </Button>
     </motion.div>
   );

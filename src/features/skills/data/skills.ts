@@ -1,4 +1,5 @@
 import type { SkillCategory } from '../types';
+import type { Locale } from '@/i18n/config';
 
 export const skills: SkillCategory[] = [
   {
@@ -68,3 +69,43 @@ export const skills: SkillCategory[] = [
     ],
   },
 ];
+
+const englishTitles = [
+  'Cloud Computing',
+  'IT Infrastructure',
+  'Microsoft Ecosystem',
+  'Development',
+  'Tools',
+  'Methodologies',
+];
+const englishSkills = [
+  undefined,
+  [
+    'Windows Server',
+    'Active Directory',
+    'DNS',
+    'DHCP',
+    'Networking',
+    'VPN',
+    'Virtualization',
+  ],
+  undefined,
+  undefined,
+  undefined,
+  [
+    'ITIL v4',
+    'Scrum',
+    'Incident Management',
+    'N1/N2 Support',
+    'Problem Solving',
+    'Technical Documentation',
+  ],
+];
+
+export function getSkills(locale: Locale): SkillCategory[] {
+  if (locale === 'es') return skills;
+  return skills.map((category, index) => ({
+    title: englishTitles[index] ?? category.title,
+    skills: englishSkills[index] ?? category.skills,
+  }));
+}

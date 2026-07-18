@@ -1,6 +1,6 @@
 'use client';
 
-import { siteConfig } from '@/config/site';
+import { useI18n } from '@/i18n/provider';
 
 import { NavLink } from '@/components/layout/nav-link';
 
@@ -10,13 +10,23 @@ type NavLinksProps = {
 };
 
 export function NavLinks({ className, onLinkClick }: NavLinksProps) {
+  const { dictionary } = useI18n();
+  const hrefs = [
+    '#hero',
+    '#about',
+    '#experience',
+    '#skills',
+    '#projects',
+    '#certifications',
+    '#contact',
+  ];
   return (
     <ul className={`flex items-center gap-8 ${className ?? ''}`}>
-      {siteConfig.nav.map((item) => (
-        <li key={item.href}>
+      {hrefs.map((href, index) => (
+        <li key={href}>
           <NavLink
-            href={item.href}
-            label={item.label}
+            href={href}
+            label={dictionary.nav[index] ?? ''}
             {...(onLinkClick ? { onClick: onLinkClick } : {})}
           />
         </li>

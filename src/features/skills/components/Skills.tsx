@@ -1,16 +1,21 @@
+'use client';
+
 import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
 import { SectionTitle } from '@/components/ui/section-title';
 import { SkillsGrid } from './SkillsGrid';
+import { useI18n } from '@/i18n/provider';
 
 export function Skills() {
+  const { dictionary } = useI18n();
+  const copy = dictionary.sections.skills;
   return (
     <Section id="skills" variant="muted">
       <Container>
         <SectionTitle
-          eyebrow="Competencias"
-          title="Tecnologías y competencias profesionales"
-          description="Mi experiencia combina infraestructura empresarial, plataformas Microsoft, desarrollo moderno y el aprendizaje continuo en Cloud Computing para construir soluciones eficientes y escalables."
+          eyebrow={copy[0] ?? ''}
+          title={copy[1] ?? ''}
+          description={copy[2] ?? ''}
         />
 
         <SkillsGrid />

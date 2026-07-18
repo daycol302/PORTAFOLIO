@@ -33,6 +33,10 @@ export function createMetadata({
     },
     alternates: {
       canonical: canonicalUrl,
+      languages: {
+        es: canonicalUrl,
+        en: canonicalUrl,
+      },
     },
     keywords:
       siteConfig.keywords.length > 0 ? [...siteConfig.keywords] : undefined,

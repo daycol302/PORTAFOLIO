@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 import { certifications } from '@/features/certifications/data/certifications';
@@ -7,15 +9,18 @@ import { Badge } from '@/components/ui/badge';
 import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
 import { SectionTitle } from '@/components/ui/section-title';
+import { useI18n } from '@/i18n/provider';
 
 export default function Certifications() {
+  const { dictionary } = useI18n();
+  const copy = dictionary.sections.certifications;
   return (
     <Section id="certifications">
       <Container>
         <SectionTitle
-          eyebrow="Certificaciones"
-          title="Certificaciones y aprendizaje continuo"
-          description="La formación continua es parte fundamental de mi desarrollo profesional. Estas certificaciones respaldan mi experiencia actual y mi proceso de especialización en Cloud Computing e Infraestructura."
+          eyebrow={copy[0] ?? ''}
+          title={copy[1] ?? ''}
+          description={copy[2] ?? ''}
         />
 
         <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -38,8 +43,8 @@ export default function Certifications() {
                       }
                     >
                       {certificate.status === 'completed'
-                        ? 'Certificación obtenida'
-                        : 'En preparación'}
+                        ? dictionary.certifications.obtained
+                        : dictionary.certifications.preparing}
                     </Badge>
                   </div>
                 </div>
@@ -47,8 +52,8 @@ export default function Certifications() {
                 <div className="flex flex-wrap items-center gap-3 text-sm">
                   <Badge variant="outline">
                     {certificate.status === 'completed'
-                      ? `Obtenida: ${certificate.issueDate}`
-                      : 'Próximo objetivo'}
+                      ? `${dictionary.certifications.obtainedOn} ${certificate.issueDate}`
+                      : dictionary.certifications.next}
                   </Badge>
 
                   {certificate.credentialUrl ? (
@@ -58,7 +63,7 @@ export default function Certifications() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        Ver credencial
+                        {dictionary.certifications.credential}
                       </Link>
                     </Button>
                   ) : null}

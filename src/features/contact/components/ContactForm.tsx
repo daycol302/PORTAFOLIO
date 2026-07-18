@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { useI18n } from '@/i18n/provider';
 
 const inputClasses =
   'w-full rounded-2xl border border-border bg-background px-4 py-4 text-sm text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20';
@@ -13,6 +14,7 @@ const inputClasses =
 type FormStatus = 'idle' | 'sending' | 'success' | 'error';
 
 export function ContactForm() {
+  const { dictionary } = useI18n();
   const [status, setStatus] = useState<FormStatus>('idle');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
@@ -66,26 +68,26 @@ export function ContactForm() {
       <Card className="overflow-hidden">
         <div>
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase">
-            Contacto directo
+            {dictionary.contact.direct}
           </p>
           <h3 className="text-foreground mt-3 text-2xl font-semibold">
-            Hablemos sobre nuevas oportunidades
+            {dictionary.contact.formTitle}
           </h3>
           <p className="text-muted-foreground mt-4 text-sm leading-7">
-            Si deseas hablar sobre una oportunidad laboral, colaboración o
-            simplemente conocer más sobre mi experiencia profesional, estaré
-            encantado de responder tu mensaje lo antes posible.
+            {dictionary.contact.formDescription}
           </p>
         </div>
 
         <form className="mt-8 space-y-5" onSubmit={handleSubmit} noValidate>
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="text-muted-foreground space-y-2 text-sm">
-              <span className="text-foreground block font-medium">Nombre</span>
+              <span className="text-foreground block font-medium">
+                {dictionary.contact.name}
+              </span>
               <input
                 type="text"
                 name="name"
-                placeholder="Ej. Juan Pérez"
+                placeholder={dictionary.contact.namePlaceholder}
                 className={inputClasses}
                 required
                 minLength={2}
@@ -94,12 +96,12 @@ export function ContactForm() {
 
             <label className="text-muted-foreground space-y-2 text-sm">
               <span className="text-foreground block font-medium">
-                Correo electrónico
+                {dictionary.contact.email}
               </span>
               <input
                 type="email"
                 name="email"
-                placeholder="nombre@empresa.com"
+                placeholder={dictionary.contact.emailPlaceholder}
                 className={inputClasses}
                 required
               />
@@ -107,11 +109,13 @@ export function ContactForm() {
           </div>
 
           <label className="text-muted-foreground space-y-2 text-sm">
-            <span className="text-foreground block font-medium">Asunto</span>
+            <span className="text-foreground block font-medium">
+              {dictionary.contact.subject}
+            </span>
             <input
               type="text"
               name="subject"
-              placeholder="Oportunidad laboral, colaboración..."
+              placeholder={dictionary.contact.subjectPlaceholder}
               className={inputClasses}
               required
               minLength={4}
@@ -119,11 +123,13 @@ export function ContactForm() {
           </label>
 
           <label className="text-muted-foreground space-y-2 text-sm">
-            <span className="text-foreground block font-medium">Mensaje</span>
+            <span className="text-foreground block font-medium">
+              {dictionary.contact.message}
+            </span>
             <textarea
               name="message"
               rows={5}
-              placeholder="Hola Daynover, me gustaría hablar contigo sobre..."
+              placeholder={dictionary.contact.messagePlaceholder}
               className={inputClasses}
               required
               minLength={20}
@@ -134,13 +140,13 @@ export function ContactForm() {
             <p className="text-muted-foreground text-sm" aria-live="polite">
               {status === 'success' ? (
                 <span className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">
-                  <CheckCircle2 className="size-4" /> ¡Gracias! Tu mensaje fue
-                  enviado correctamente.
+                  <CheckCircle2 className="size-4" />{' '}
+                  {dictionary.contact.success}
                 </span>
               ) : status === 'error' ? (
                 errorMessage // ✅ muestra la causa exacta
               ) : (
-                'Normalmente respondo en menos de 24 horas.'
+                dictionary.contact.idle
               )}
             </p>
 
@@ -154,7 +160,9 @@ export function ContactForm() {
               ) : (
                 <Send />
               )}
-              {status === 'sending' ? 'Enviando' : 'Enviar consulta'}
+              {status === 'sending'
+                ? dictionary.contact.sending
+                : dictionary.contact.send}
             </Button>
           </div>
         </form>

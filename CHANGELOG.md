@@ -224,3 +224,11 @@ Ejemplo:
 https://keepachangelog.com/
 
 https://semver.org/
+
+# Changelog
+
+## 0.2.0 - 2026-07-17
+
+- Added Spanish and English i18n infrastructure with persisted language preference.
+- Added a language selector to the main navigation.
+- Added language-aware SEO alternates and i18n architecture documentation.

@@ -3,6 +3,7 @@ import { NavLinks } from './nav-links';
 import { Logo } from './logo';
 import { ThemeToggle } from './theme-toggle';
 import { MobileNav } from './mobile-nav';
+import { LanguageSwitcher } from './language-switcher';
 
 export default function Navbar() {
   return (
@@ -17,6 +18,7 @@ export default function Navbar() {
             </nav>
 
             <ThemeToggle />
+            <LanguageSwitcher />
 
             <MobileNav />
           </div>

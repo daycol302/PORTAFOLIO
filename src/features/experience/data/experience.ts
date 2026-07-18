@@ -1,4 +1,5 @@
 import type { Experience } from '@/types/portfolio';
+import type { Locale } from '@/i18n/config';
 
 export const experiences: Experience[] = [
   {
@@ -195,3 +196,102 @@ export const experiences: Experience[] = [
     technologies: ['Oracle', 'SAP', 'Windows', 'ITIL'],
   },
 ];
+
+const englishExperience: Record<string, Partial<Experience>> = {
+  infomedia: {
+    employmentType: 'Full-time',
+    mode: 'On-site',
+    location: 'Bogotá, Colombia',
+    start: 'Jun 2025',
+    end: 'Present',
+    description: [
+      'Implementation, installation, and technical support for enterprise platforms used by corporate clients.',
+      'Configuration and preventive/corrective maintenance of servers, network devices, and technology equipment.',
+      'Level 1 and Level 2 technical support for IPTV, digital signage, and interactive kiosk solutions.',
+      'Participation in infrastructure migration and deployment windows alongside the engineering team.',
+      'Diagnosis and resolution of incidents in production environments, meeting SLAs and response times.',
+      'On-site technical information gathering for new projects and implementations.',
+      'Inventory management, validation, preparation, and delivery of technology equipment to clients.',
+      'Preparation of technical reports and follow-up of support and project activities.',
+      'Collaboration with engineers and specialists to ensure operational continuity and client satisfaction.',
+    ],
+  },
+  independent: {
+    company: 'Personal Project',
+    employmentType: 'Personal project',
+    mode: 'Remote',
+    start: 'Jan 2025',
+    end: 'Present',
+    description: [
+      'End-to-end administration of a private server based on cloud infrastructure.',
+      'Development of new features using C#.',
+      'MySQL database optimization.',
+      'Server configuration administration.',
+      'Performance monitoring and improvement.',
+    ],
+  },
+  colmena: {
+    employmentType: 'Apprenticeship contract',
+    mode: 'On-site',
+    location: 'Bogotá',
+    start: 'Oct 2024',
+    end: 'Apr 2025',
+    description: [
+      'Technology project tracking.',
+      'Preparation of technical documentation.',
+      'Coordination between technical and functional teams.',
+      'Creation of executive reports.',
+      'Support for technology portfolio management.',
+    ],
+  },
+  pear: {
+    employmentType: 'Full-time',
+    mode: 'On-site',
+    location: 'Bogotá',
+    start: 'Jun 2023',
+    end: 'Oct 2024',
+    description: [
+      'N1 and N2 technical support.',
+      'Microsoft 365 administration.',
+      'Active Directory management.',
+      'Basic Windows Server administration.',
+      'Email and OneDrive migration.',
+      'Use of Git and Azure DevOps.',
+    ],
+  },
+  adsum: {
+    employmentType: 'Full-time',
+    mode: 'On-site',
+    location: 'Bogotá',
+    start: 'Jan 2023',
+    end: 'Jun 2023',
+    description: [
+      'Microsoft 365 license administration.',
+      'Enterprise technical support.',
+      'Basic server administration.',
+      'Internal process optimization.',
+    ],
+  },
+  heimcore: {
+    employmentType: 'Full-time',
+    mode: 'On-site',
+    location: 'Bogotá',
+    start: 'Jan 2022',
+    end: 'Nov 2022',
+    description: [
+      'Preventive and corrective maintenance.',
+      'Printer and mobile device support.',
+      'Oracle and SAP functional support.',
+      'ITIL-based incident management.',
+      'Basic server administration.',
+    ],
+  },
+};
+
+export function getExperiences(locale: Locale): Experience[] {
+  if (locale === 'es') return experiences;
+  return experiences.map((experience) => ({
+    ...experience,
+    ...englishExperience[experience.id],
+  }));
+}
