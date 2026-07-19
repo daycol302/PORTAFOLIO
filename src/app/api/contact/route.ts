@@ -10,6 +10,11 @@ type ContactPayload = {
   message?: unknown;
 };
 
+console.log('RESEND_API_KEY existe:', !!process.env.RESEND_API_KEY);
+console.log(
+  'Primeros caracteres:',
+  process.env.RESEND_API_KEY?.substring(0, 8),
+);
 const isValidText = (value: unknown, minimumLength: number) =>
   typeof value === 'string' && value.trim().length >= minimumLength;
 
