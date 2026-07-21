@@ -28,6 +28,20 @@ export const certifications: Certification[] = [
     credentialUrl: '#',
   },
   {
+    id: 'awstechnicalcloud',
+
+    name: 'AWS Cloud Technical Essentials',
+
+    issuer: 'AWS Coursera',
+
+    issueDate: '2026',
+
+    status: 'completed',
+
+    credentialUrl:
+      'https://coursera.org/share/09b8366e3c72e705d3343588718f37e0',
+  },
+  {
     id: 'cybersecurity',
 
     name: 'Cybersecurity Awareness Learner',
